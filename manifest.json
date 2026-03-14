@@ -1,0 +1,9 @@
+{
+  "name": "Gabriel e Geus — Gli Inizi",
+  "short_name": "Gabriel e Geus",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0600",
+  "theme_color": "#1a0e00",
+  "orientation": "portrait"
+}

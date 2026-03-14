@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/gbert/Downloads/index%20(1).html -->
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#1a0e00">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Gabriel e Geus">
+  <title>Gabriel e Geus — Gli Inizi</title>
+  <link rel="manifest" href="file:///C:/Users/gbert/Downloads/manifest.json">
+  <link href="./index_files/css2" rel="stylesheet">
+
+  <style>
+    :root {
+      --oro: #c8860a;
+      --oro-chiaro: #f0b429;
+      --oro-brillante: #ffd166;
+      --seppia: #3d2200;
+      --seppia-medio: #6b3d00;
+      --seppia-chiaro: #a0622a;
+      --carta: #1a0e00;
+      --carta-medio: #2a1800;
+      --carta-chiaro: #3d2600;
+      --nero-fumo: #0a0600;
+      --testo: #e8c87a;
+      --testo-chiaro: #f5e0b0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      background: var(--nero-fumo);
+      font-family: 'EB Garamond', Georgia, serif;
+      color: var(--testo);
+      overflow-x: hidden;
+    }
+
+    /* GRAIN TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ===== SCHERMATA HOME ===== */
+    #screen-home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, #3d1f00 0%, #1a0a00 50%, #0a0500 100%);
+    }
+
+    /* Alone luminosa centrale */
+    #screen-home::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(200,134,10,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Header con titolo */
+    .home-header {
+      width: 100%;
+      padding: 3rem 2rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .home-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      font-weight: 900;
+      color: var(--oro-chiaro);
+      text-shadow:
+        0 0 30px rgba(200,134,10,0.8),
+        0 0 60px rgba(200,134,10,0.4),
+        2px 2px 4px rgba(0,0,0,0.9);
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+
+    .home-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.85rem, 3vw, 1.1rem);
+      color: var(--seppia-chiaro);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .home-divider {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--oro), transparent);
+      margin: 1rem auto 0;
+    }
+
+    /* Immagine copertina centrale */
+    .home-cover {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cover-frame {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .cover-frame::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(135deg, var(--oro), var(--seppia-medio), var(--oro-chiaro), var(--seppia-medio));
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .cover-frame::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      background: radial-gradient(ellipse, rgba(200,134,10,0.3) 0%, transparent 70%);
+      z-index: -2;
+    }
+
+    .cover-img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      filter: sepia(0.2) contrast(1.05);
+    }
+
+    /* Autore */
+    .home-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      color: var(--seppia-chiaro);
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin-top: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    /* Bottoni azione */
+    .home-actions {
+      width: 100%;
+      padding: 1.5rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #8b5e00, #c8860a, #8b5e00);
+      border: 1px solid var(--oro-chiaro);
+      border-radius: 2px;
+      color: #fff8e8;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      box-shadow:
+        0 0 20px rgba(200,134,10,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+      box-shadow: 0 0 10px rgba(200,134,10,0.2);
+    }
+
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 2rem;
+      background: transparent;
+      border: 1px solid var(--seppia-medio);
+      border-radius: 2px;
+      color: var(--seppia-chiaro);
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:active {
+      border-color: var(--oro);
+      color: var(--oro-chiaro);
+    }
+
+    /* ===== SCHERMATA INTRO ===== */
+    #screen-intro {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+      background:
+        radial-gradient(ellipse 100% 50% at 50% 0%, #2a1400 0%, #0f0800 60%, #060300 100%);
+      position: relative;
+    }
+
+    .intro-header {
+      padding: 2rem 1.5rem 1rem;
+      border-bottom: 1px solid rgba(200,134,10,0.2);
+    }
+
+    .intro-chapter {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--oro);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .intro-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.4rem;
+      color: var(--testo-chiaro);
+      margin-top: 0.25rem;
+    }
+
+    .intro-body {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .narrazione {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--testo-chiaro);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .narrazione-geus {
+      font-style: italic;
+      color: #b8956a;
+      border-left: 2px solid var(--oro);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .intro-image {
+      width: 100%;
+      max-width: 400px;
+      margin: 1.5rem auto;
+      display: block;
+      filter: sepia(0.15);
+      border: 1px solid rgba(200,134,10,0.3);
+    }
+
+    .intro-footer {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(200,134,10,0.2);
+    }
+
+    /* ===== SCHERMATA STATISTICHE ===== */
+    #screen-stats {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+      background: linear-gradient(180deg, #0f0800 0%, #1a0e00 100%);
+    }
+
+    .stats-header {
+      padding: 2rem 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(200,134,10,0.2);
+    }
+
+    .stats-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: var(--oro-chiaro);
+    }
+
+    .stats-body {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .personaggio-card {
+      background: linear-gradient(135deg, rgba(61,34,0,0.6), rgba(26,14,0,0.8));
+      border: 1px solid rgba(200,134,10,0.3);
+      border-radius: 4px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .personaggio-nome {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--oro-chiaro);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.25rem;
+    }
+
+    .personaggio-ruolo {
+      font-size: 0.8rem;
+      color: var(--seppia-chiaro);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .stat-nome {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--testo);
+      letter-spacing: 0.05em;
+      width: 110px;
+      flex-shrink: 0;
+    }
+
+    .stat-barra-container {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .stat-barra {
+      height: 100%;
+      background: linear-gradient(to right, var(--seppia-medio), var(--oro));
+      border-radius: 3px;
+      transition: width 0.8s ease;
+    }
+
+    .stat-barra.fiducia {
+      background: linear-gradient(to right, #1a3a6b, #4a90d9);
+    }
+
+    .stat-barra.corruzione {
+      background: linear-gradient(to right, #2a0a00, #8b2200);
+    }
+
+    .stat-valore {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--oro);
+      width: 25px;
+      text-align: right;
+    }
+
+    /* ===== NAVIGAZIONE ===== */
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10,6,0,0.95);
+      border-top: 1px solid rgba(200,134,10,0.2);
+      display: flex;
+      z-index: 100;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .nav-item {
+      flex: 1;
+      padding: 0.75rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+      color: var(--seppia-chiaro);
+    }
+
+    .nav-item.active {
+      color: var(--oro-chiaro);
+    }
+
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .nav-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== ANIMAZIONI ===== */
+    @keyframes glow-pulse {
+      0%, 100% { text-shadow: 0 0 30px rgba(200,134,10,0.8), 0 0 60px rgba(200,134,10,0.4), 2px 2px 4px rgba(0,0,0,0.9); }
+      50% { text-shadow: 0 0 40px rgba(200,134,10,1), 0 0 80px rgba(200,134,10,0.6), 2px 2px 4px rgba(0,0,0,0.9); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .screen-active {
+      display: flex !important;
+      animation: fadeIn 0.4s ease;
+    }
+
+    /* Decorazioni angolari */
+    .corner-ornament {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      opacity: 0.4;
+    }
+    .corner-ornament.tl { top: 1rem; left: 1rem; border-top: 1px solid var(--oro); border-left: 1px solid var(--oro); }
+    .corner-ornament.tr { top: 1rem; right: 1rem; border-top: 1px solid var(--oro); border-right: 1px solid var(--oro); }
+    .corner-ornament.bl { bottom: 5rem; left: 1rem; border-bottom: 1px solid var(--oro); border-left: 1px solid var(--oro); }
+    .corner-ornament.br { bottom: 5rem; right: 1rem; border-bottom: 1px solid var(--oro); border-right: 1px solid var(--oro); }
+  </style>
+</head>
+<body>
+
+<!-- ===== SCHERMATA HOME ===== -->
+<div id="screen-home" class="screen-active">
+  <div class="corner-ornament tl"></div>
+  <div class="corner-ornament tr"></div>
+  <div class="corner-ornament bl"></div>
+  <div class="corner-ornament br"></div>
+
+  <div class="home-header">
+    <div class="home-title">Gabriel<br>e Geus</div>
+    <div class="home-subtitle">Gli Inizi · Vol. I</div>
+    <div class="home-divider"></div>
+  </div>
+
+  <div class="home-cover">
+    <div>
+      <div class="cover-frame">
+        <!-- Placeholder copertina — sostituire con: <img src="copertina.jpg" class="cover-img" alt="Copertina"> -->
+        <svg class="cover-img" viewBox="0 0 280 380" xmlns="http://www.w3.org/2000/svg" style="background:#1a0e00;">
+          <defs>
+            <radialgradient id="bg" cx="50%" cy="40%">
+              <stop offset="0%" stop-color="#3d2000"></stop>
+              <stop offset="100%" stop-color="#0a0500"></stop>
+            </radialgradient>
+          </defs>
+          <rect width="280" height="380" fill="url(#bg)"></rect>
+          <!-- Ali di Geus -->
+          <ellipse cx="170" cy="160" rx="80" ry="50" fill="none" stroke="#c8860a" stroke-width="0.5" opacity="0.6"></ellipse>
+          <ellipse cx="110" cy="160" rx="80" ry="50" fill="none" stroke="#c8860a" stroke-width="0.5" opacity="0.6"></ellipse>
+          <!-- Luce centrale -->
+          <circle cx="140" cy="200" r="60" fill="rgba(200,134,10,0.08)"></circle>
+          <circle cx="140" cy="200" r="30" fill="rgba(200,134,10,0.12)"></circle>
+          <!-- Silhouette Gabriel -->
+          <rect x="118" y="240" width="20" height="60" rx="3" fill="#2a1400"></rect>
+          <circle cx="128" cy="232" r="12" fill="#2a1400"></circle>
+          <!-- Silhouette Geus -->
+          <rect x="148" y="235" width="20" height="65" rx="3" fill="#3d2200"></rect>
+          <circle cx="158" cy="225" r="13" fill="#3d2200"></circle>
+          <!-- Stelle -->
+          <circle cx="60" cy="50" r="1.5" fill="#f0b429" opacity="0.8"></circle>
+          <circle cx="220" cy="80" r="1" fill="#f0b429" opacity="0.6"></circle>
+          <circle cx="180" cy="30" r="1" fill="#f0b429" opacity="0.5"></circle>
+          <circle cx="40" cy="120" r="1" fill="#f0b429" opacity="0.4"></circle>
+          <circle cx="240" cy="150" r="1.5" fill="#f0b429" opacity="0.7"></circle>
+          <!-- Testo placeholder -->
+          <text x="140" y="340" text-anchor="middle" fill="#c8860a" font-size="10" font-family="serif" opacity="0.6">[ inserire copertina ]</text>
+        </svg>
+      </div>
+      <div class="home-author">Gaetano Bertozzi Avanzini</div>
+    </div>
+  </div>
+
+  <div class="home-actions">
+    <button class="btn-primary" onclick="showScreen(&#39;intro&#39;)">
+      ✦ Inizia l'Avventura ✦
+    </button>
+    <button class="btn-secondary" onclick="showScreen(&#39;stats&#39;)">
+      Schede Personaggi
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA INTRO / CAPITOLO 1 ===== -->
+<div id="screen-intro" style="display:none; flex-direction:column; min-height:100vh; background:radial-gradient(ellipse 100% 50% at 50% 0%, #2a1400 0%, #0f0800 60%, #060300 100%);">
+
+  <div style="padding: 2rem 1.5rem 1rem; border-bottom: 1px solid rgba(200,134,10,0.2);">
+    <div style="font-family:&#39;Cinzel&#39;,serif; font-size:0.7rem; color:var(--oro); letter-spacing:0.3em; text-transform:uppercase;">Capitolo 1</div>
+    <div style="font-family:&#39;Cinzel Decorative&#39;,serif; font-size:1.3rem; color:var(--testo-chiaro); margin-top:0.25rem;">I Due Universi</div>
+  </div>
+
+  <div style="flex:1; padding:1.5rem; overflow-y:auto; padding-bottom:5rem;">
+    <p class="narrazione">
+      La stanza era particolarmente ordinata per un ragazzo della sua età. Non che fosse merito suo, ma ordine e pulito colpivano qualunque persona, essere o quasi angelo che avesse osservato i dintorni del suo letto.
+    </p>
+
+    <div class="narrazione-geus">
+      C'è qualcosa di stranamente vulnerabile in un essere umano che dorme. Voi comuni abbassate tutte le difese, vi abbandonate completamente a qualcosa che non controllate, e lo fate ogni notte con una fiducia che, ammettiamolo, rasenta l'incoscienza.
+    </div>
+
+    <p class="narrazione">
+      Gabriel aveva solo 12 anni ma il suo comportamento aveva già destato le attenzioni dei Piani Superiori...
+    </p>
+
+    <div style="text-align:center; margin: 2rem 0; opacity:0.5;">
+      <div style="font-family:&#39;Cinzel&#39;,serif; font-size:0.7rem; letter-spacing:0.3em; color:var(--oro);">— ✦ —</div>
+    </div>
+
+    <div class="narrazione-geus">
+      Io sono (almeno così mi è stato insegnato) Geus, un quasi angelo. Ho solo 800 anni e mi ritrovo al terzo stadio di sviluppo della mia essenza. È stata modestamente una carriera assai veloce — e voi che continuate a lamentarvi degli stipendi!
+    </div>
+  </div>
+
+  <div style="padding:1.25rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button class="btn-primary" onclick="showScreen(&#39;stats&#39;)">
+      Continua →
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA STATISTICHE ===== -->
+<div id="screen-stats" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0f0800 0%,#1a0e00 100%);">
+
+  <div style="padding:2rem 1.5rem 1rem; text-align:center; border-bottom:1px solid rgba(200,134,10,0.2);">
+    <div style="font-family:&#39;Cinzel Decorative&#39;,serif; font-size:1.1rem; color:var(--oro-chiaro);">Schede Personaggi</div>
+    <div style="font-family:&#39;Cinzel&#39;,serif; font-size:0.65rem; color:var(--seppia-chiaro); letter-spacing:0.2em; text-transform:uppercase; margin-top:0.25rem;">Task Force</div>
+  </div>
+
+  <div style="flex:1; padding:1.25rem; overflow-y:auto; padding-bottom:5rem;">
+
+    <!-- GABRIEL -->
+    <div class="personaggio-card">
+      <div class="personaggio-nome">Gabriel</div>
+      <div class="personaggio-ruolo">Comune · 12 anni · Portatore del Dono</div>
+      <div class="stat-row">
+        <div class="stat-nome">Forza Fisica</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:30%"></div></div>
+        <div class="stat-valore">3</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Resistenza</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:30%"></div></div>
+        <div class="stat-valore">3</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Forza Magica</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:50%"></div></div>
+        <div class="stat-valore">5</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Res. Magica</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:30%"></div></div>
+        <div class="stat-valore">3</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Istinto</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:40%"></div></div>
+        <div class="stat-valore">4</div>
+      </div>
+      <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid rgba(200,134,10,0.15);">
+        <div style="font-family:&#39;Cinzel&#39;,serif; font-size:0.65rem; color:var(--oro); letter-spacing:0.1em; margin-bottom:0.5rem;">FIDUCIA</div>
+        <div class="stat-row">
+          <div class="stat-nome">→ Deus</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:40%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">4</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">→ Vesper</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:20%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">2</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">→ Se Stesso</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:30%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GEUS -->
+    <div class="personaggio-card">
+      <div class="personaggio-nome">Geus</div>
+      <div class="personaggio-ruolo">Quasi Angelo · 800 anni · III Stadio</div>
+      <div class="stat-row">
+        <div class="stat-nome">Essenza</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:80%"></div></div>
+        <div class="stat-valore">8</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Forza Magica</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+        <div class="stat-valore">7</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Res. Magica</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+        <div class="stat-valore">7</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Controllo</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:90%"></div></div>
+        <div class="stat-valore">9</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Piume</div>
+        <div class="stat-barra-container"><div class="stat-barra" style="width:90%; background:linear-gradient(to right,#4a2,#8f8)"></div></div>
+        <div class="stat-valore" style="color:#8f8">9</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-nome">Fid. in Gabriel</div>
+        <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:40%"></div></div>
+        <div class="stat-valore" style="color:#4a90d9">4</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding:1rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button class="btn-secondary" onclick="showScreen(&#39;home&#39;)">
+      ← Torna alla Home
+    </button>
+  </div>
+</div>
+
+<script>
+  function showScreen(name) {
+    document.querySelectorAll('[id^="screen-"]').forEach(s => {
+      s.style.display = 'none';
+      s.classList.remove('screen-active');
+    });
+    const target = document.getElementById('screen-' + name);
+    if (target) {
+      target.style.display = 'flex';
+      target.classList.add('screen-active');
+      window.scrollTo(0, 0);
+    }
+  }
+</script>
+
+
+
+</body></html>

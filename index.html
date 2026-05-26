@@ -528,6 +528,30 @@
       text-transform: uppercase;
       margin-top: 0.25rem;
     }
+
+    .personaggio-img {
+      width: 100%;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      filter: sepia(0.15) contrast(1.05);
+      border: 1px solid rgba(200,134,10,0.2);
+    }
+
+    .personaggio-card.antagonista .personaggio-img {
+      border-color: rgba(139,34,0,0.3);
+      filter: sepia(0.3) contrast(1.1);
+    }
+
+    .personaggio-card.ambiguo .personaggio-img {
+      border-color: rgba(80,60,140,0.3);
+    }
+
+    .scene-img {
+      width: 100%;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(200,134,10,0.15);
+    }
   </style>
 </head>
 <body>
@@ -576,6 +600,7 @@
   </div>
 
   <div style="flex:1; padding:1.5rem; overflow-y:auto; padding-bottom:5rem;">
+    <img src="scene-lago.png" class="scene-img" alt="Gabriel e Geus">
     <p class="narrazione">
       La stanza era particolarmente ordinata per un ragazzo della sua età. Non che fosse merito suo, ma ordine e pulito colpivano qualunque persona, essere o quasi angelo che avesse osservato i dintorni del suo letto.
     </p>
@@ -626,6 +651,7 @@
 
       <!-- GABRIEL -->
       <div class="personaggio-card">
+        <img src="img-gabriel.png" class="personaggio-img" alt="Gabriel">
         <div class="personaggio-nome">Gabriel</div>
         <div class="personaggio-ruolo">Comune · 12 anni · Portatore del Dono</div>
         <div class="personaggio-desc">"Un ragazzo ordinario con un dono straordinario. La sua forza non è nei muscoli, ma nella testardaggine con cui rifiuta di cedere."</div>
@@ -674,6 +700,7 @@
 
       <!-- GEUS -->
       <div class="personaggio-card">
+        <img src="img-geus.png" class="personaggio-img" alt="Geus">
         <div class="personaggio-nome">Geus</div>
         <div class="personaggio-ruolo">Quasi Angelo · 800 anni · III Stadio</div>
         <div class="personaggio-desc">"800 anni di esistenza e ancora non capisco del tutto voi umani. Forse è per questo che mi diverto così tanto a osservarvi."</div>
@@ -711,6 +738,7 @@
 
       <!-- SPAZIOSO -->
       <div class="personaggio-card">
+        <img src="img-spazioso.png" class="personaggio-img" alt="Spazioso">
         <div class="personaggio-nome">Spazioso</div>
         <div class="personaggio-ruolo">Quasi Angelo · Task Force · Specialista Difensivo</div>
         <div class="personaggio-desc">"Il silenzio di Spazioso pesa quanto le sue parole. Quando parla, vale la pena ascoltare."</div>
@@ -748,6 +776,7 @@
 
       <!-- MARTIRIO -->
       <div class="personaggio-card">
+        <img src="img-martirio.png" class="personaggio-img" alt="Martirio">
         <div class="personaggio-nome">Martirio</div>
         <div class="personaggio-ruolo">Quasi Angelo · Task Force · Specialista Offensivo</div>
         <div class="personaggio-desc">"Il nome è un po' drammatico, lo ammetto. Ma chi lo ha scelto aveva ragione: Martirio porta il peso di ogni battaglia come fosse l'ultima."</div>
@@ -785,6 +814,7 @@
 
       <!-- ARCANGELO SUPERIORE -->
       <div class="personaggio-card" style="border-color: rgba(200,134,10,0.5); background: linear-gradient(135deg, rgba(61,34,0,0.7), rgba(20,10,0,0.9));">
+        <img src="img-arcangelo.png" class="personaggio-img" alt="Arcangelo Superiore">
         <div class="personaggio-nome" style="display:flex; align-items:center; gap:0.5rem;">
           Arcangelo Superiore
           <span style="font-family:'Cinzel',serif; font-size:0.55rem; color:#cc4444; letter-spacing:0.1em; border:1px solid rgba(200,50,50,0.4); padding:0.1rem 0.4rem; border-radius:2px;">?</span>
@@ -829,6 +859,7 @@
 
       <!-- GOLERT -->
       <div class="personaggio-card antagonista">
+        <img src="img-golert.png" class="personaggio-img" alt="Golert">
         <div class="personaggio-nome">Golert</div>
         <div class="personaggio-ruolo">Angelo Caduto · Caos · Antagonista Principale</div>
         <div class="personaggio-desc">"Golert non vuole il potere. Vuole vedere il mondo bruciare e ridere mentre succede. Questo lo rende più pericoloso di qualsiasi tiranno."</div>
@@ -872,6 +903,7 @@
 
       <!-- CRUDELIUS -->
       <div class="personaggio-card antagonista">
+        <img src="img-crudelius.png" class="personaggio-img" alt="Crudelius">
         <div class="personaggio-nome">Crudelius</div>
         <div class="personaggio-ruolo">Angelo Caduto · Ordine Corrotto · Antagonista</div>
         <div class="personaggio-desc">"Crudelius è l'opposto di Gabriel in ogni cosa. Dove Gabriel si fida, lui sospetta. Dove Gabriel si apre, lui chiude. Specchi rotti dello stesso vetro."</div>
@@ -915,6 +947,7 @@
 
       <!-- 3 ANGELI OSCURI -->
       <div class="personaggio-card antagonista">
+        <img src="scene-scudo.png" class="personaggio-img" alt="I Tre Angeli Oscuri">
         <div class="personaggio-nome">I Tre Angeli Oscuri</div>
         <div class="personaggio-ruolo">Angeli Caduti · Servitori di Golert</div>
         <div class="personaggio-desc">"Non hanno più nomi propri. Li hanno ceduti insieme alle piume. Ora sono solo strumenti — affilati, obbedienti, e molto pazienti."</div>
@@ -952,6 +985,7 @@
 
       <!-- VESPER -->
       <div class="personaggio-card ambiguo">
+        <img src="img-vesper.png" class="personaggio-img" alt="Vesper">
         <div class="personaggio-nome">Vesper</div>
         <div class="personaggio-ruolo">Entità del Caos · Nato dalla Frattura · Ambiguo</div>
         <div class="personaggio-desc">"Vesper non è né buono né cattivo. È ciò che nasce quando le regole si spezzano. La domanda non è di che parte stia — ma se abbia davvero una scelta."</div>

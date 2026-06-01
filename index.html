@@ -1,22 +1,1683 @@
-<!doctype html><html data-build-id="83c1aec1cb" data-git-hash="83c1aec1cb050992c25b50e441034abbdcdfff5b" data-build-timestamp="1780191616" data-version="1.0.0" data-env="" data-color-version="v2" lang="en" data-theme="claude" data-mode="light" class="h-screen antialiased scroll-smooth"><head data-ion-ip-country="BE"><link rel="preconnect" href="https://assets-proxy.anthropic.com" crossorigin><link rel="dns-prefetch" href="https://assets-proxy.anthropic.com"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title data-react-fallback>Claude</title><meta data-react-fallback name="description" content="Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work."><meta name="apple-itunes-app" content="app-id=6473753684"><meta property="og:type" content="website"><meta property="og:site_name" content="Claude"><meta property="og:image" content="https://claude.ai/images/claude_ogimage.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg"><link rel="icon" type="image/png" sizes="32x32" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce67964e7-CAX1bqSh.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c03e51811-DebilQLI.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-jJjJELY8.png"><link rel="apple-touch-startup-image" href="/images/claude_app_icon.png"><link rel="manifest" href="/manifest.json"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-CFxw3nG7.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-C-BHYa_K.woff2" as="font" type="font/woff2" crossorigin><script nonce="VSNaJOm43nXB+B4tm/FEPw==">void 0===globalThis.process&&(globalThis.process={env:{},cwd:function(){return"/"}}),void 0===globalThis.global&&(globalThis.global=globalThis)</script><script type="application/ld+json" nonce="VSNaJOm43nXB+B4tm/FEPw==">{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "name": "Claude",
-            "alternateName": ["Claude.ai", "Claude by Anthropic"],
-            "url": "https://claude.com"
-          },
-          {
-            "@type": "Organization",
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com",
-            "logo": "https://claude.ai/images/claude_ogimage.png",
-            "sameAs": [
-              "https://x.com/AnthropicAI",
-              "https://www.linkedin.com/company/anthropic",
-              "https://www.youtube.com/@anthropic-ai"
-            ]
-          }
-        ]
-      }</script><script nonce="VSNaJOm43nXB+B4tm/FEPw==">!function(){try{performance.mark?.("rq_cache:preload_start");const e="keyval-store",o="keyval",r="react-query-cache",t=new Promise(t=>{if(!window.indexedDB)return void t(void 0);const c=indexedDB.open(e);c.onupgradeneeded=()=>{c.transaction?.abort()},c.onerror=()=>t(void 0),c.onsuccess=()=>{const a=c.result;if(!a.objectStoreNames.contains(o))return a.close(),indexedDB.deleteDatabase(e),void t(void 0);try{const e=a.transaction(o,"readonly").objectStore(o).get(r);e.onerror=()=>{a.close(),t(void 0)},e.onsuccess=()=>{a.close(),window.__PRELOADED_IDB_CACHE_RESULT__=e.result,t(e.result)}}catch{a.close(),t(void 0)}}});window.__PRELOADED_IDB_CACHE__=t,performance.measure?.("rq_cache:preload_exec",{start:"rq_cache:preload_start"})}catch{}}()</script><link rel="preconnect" href="https://js.stripe.com"><link rel="preconnect" href="https://m.stripe.network"><script type="module" crossorigin src="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/index-jeZyCqHR.js" nonce="VSNaJOm43nXB+B4tm/FEPw=="></script><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c2591c98b-yIeMwlTz.css"><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-BT_FX7PY.css"></head><body class="bg-bg-100 text-text-100 font-ui min-h-screen"><div id="root"></div><script nonce="VSNaJOm43nXB+B4tm/FEPw==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='VSNaJOm43nXB+B4tm/FEPw==';d.innerHTML="window.__CF$cv$params={r:'a04d256a8e9f560d',t:'MTc4MDMwNTY2NQ=='};var a=document.createElement('script');a.nonce='VSNaJOm43nXB+B4tm/FEPw==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#1a0e00" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Gabriel e Geus" />
+  <title>Gabriel e Geus — Gli Inizi</title>
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --oro: #c8860a;
+      --oro-chiaro: #f0b429;
+      --oro-brillante: #ffd166;
+      --seppia: #3d2200;
+      --seppia-medio: #6b3d00;
+      --seppia-chiaro: #a0622a;
+      --carta: #1a0e00;
+      --carta-medio: #2a1800;
+      --carta-chiaro: #3d2600;
+      --nero-fumo: #0a0600;
+      --testo: #e8c87a;
+      --testo-chiaro: #f5e0b0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      background: var(--nero-fumo);
+      font-family: 'EB Garamond', Georgia, serif;
+      color: var(--testo);
+      overflow-x: hidden;
+    }
+
+    /* GRAIN TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ===== SCHERMATA HOME ===== */
+    #screen-home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, #3d1f00 0%, #1a0a00 50%, #0a0500 100%);
+    }
+
+    #screen-home::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(200,134,10,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .home-header {
+      width: 100%;
+      padding: 3rem 2rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .home-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      font-weight: 900;
+      color: var(--oro-chiaro);
+      text-shadow:
+        0 0 30px rgba(200,134,10,0.8),
+        0 0 60px rgba(200,134,10,0.4),
+        2px 2px 4px rgba(0,0,0,0.9);
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+
+    .home-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.85rem, 3vw, 1.1rem);
+      color: var(--seppia-chiaro);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .home-divider {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--oro), transparent);
+      margin: 1rem auto 0;
+    }
+
+    .home-cover {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cover-frame {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .cover-frame::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(135deg, var(--oro), var(--seppia-medio), var(--oro-chiaro), var(--seppia-medio));
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .cover-frame::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      background: radial-gradient(ellipse, rgba(200,134,10,0.3) 0%, transparent 70%);
+      z-index: -2;
+    }
+
+    .cover-img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      filter: sepia(0.2) contrast(1.05);
+    }
+
+    .home-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      color: var(--seppia-chiaro);
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin-top: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .home-actions {
+      width: 100%;
+      padding: 1.5rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #8b5e00, #c8860a, #8b5e00);
+      border: 1px solid var(--oro-chiaro);
+      border-radius: 2px;
+      color: #fff8e8;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      box-shadow:
+        0 0 20px rgba(200,134,10,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+      box-shadow: 0 0 10px rgba(200,134,10,0.2);
+    }
+
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 2rem;
+      background: transparent;
+      border: 1px solid var(--seppia-medio);
+      border-radius: 2px;
+      color: var(--seppia-chiaro);
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:active {
+      border-color: var(--oro);
+      color: var(--oro-chiaro);
+    }
+
+    /* ===== SCHERMATA INTRO ===== */
+    #screen-intro {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+      background:
+        radial-gradient(ellipse 100% 50% at 50% 0%, #2a1400 0%, #0f0800 60%, #060300 100%);
+      position: relative;
+    }
+
+    .narrazione {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--testo-chiaro);
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 1.2rem;
+    }
+
+    .narrazione-geus {
+      font-style: italic;
+      color: #7ab3e0;
+      border-left: 2px solid #4a90d9;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ===== SCHERMATA STATISTICHE ===== */
+    #screen-stats {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+      background: linear-gradient(180deg, #0f0800 0%, #1a0e00 100%);
+    }
+
+    /* Tab di navigazione tra gruppi */
+    .stats-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(200,134,10,0.2);
+      background: rgba(10,6,0,0.5);
+    }
+
+    .stats-tab {
+      flex: 1;
+      padding: 0.65rem 0.25rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--seppia-chiaro);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .stats-tab.active {
+      color: var(--oro-chiaro);
+      border-bottom: 2px solid var(--oro);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    .personaggio-card {
+      background: linear-gradient(135deg, rgba(61,34,0,0.6), rgba(26,14,0,0.8));
+      border: 1px solid rgba(200,134,10,0.3);
+      border-radius: 4px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .personaggio-card.antagonista {
+      background: linear-gradient(135deg, rgba(61,0,0,0.5), rgba(26,0,0,0.8));
+      border-color: rgba(139,34,0,0.4);
+    }
+
+    .personaggio-card.ambiguo {
+      background: linear-gradient(135deg, rgba(20,20,50,0.6), rgba(10,10,30,0.8));
+      border-color: rgba(80,60,140,0.4);
+    }
+
+    .personaggio-nome {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--oro-chiaro);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.25rem;
+    }
+
+    .personaggio-card.antagonista .personaggio-nome {
+      color: #e05050;
+    }
+
+    .personaggio-card.ambiguo .personaggio-nome {
+      color: #9988dd;
+    }
+
+    .personaggio-ruolo {
+      font-size: 0.8rem;
+      color: var(--seppia-chiaro);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .personaggio-desc {
+      font-size: 0.85rem;
+      color: var(--testo);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .stat-nome {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--testo);
+      letter-spacing: 0.05em;
+      width: 110px;
+      flex-shrink: 0;
+    }
+
+    .stat-barra-container {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .stat-barra {
+      height: 100%;
+      background: linear-gradient(to right, var(--seppia-medio), var(--oro));
+      border-radius: 3px;
+      transition: width 0.8s ease;
+    }
+
+    .stat-barra.fiducia {
+      background: linear-gradient(to right, #1a3a6b, #4a90d9);
+    }
+
+    .stat-barra.corruzione {
+      background: linear-gradient(to right, #2a0a00, #8b2200);
+    }
+
+    .stat-barra.viola {
+      background: linear-gradient(to right, #2a1050, #7744cc);
+    }
+
+    .stat-barra.verde {
+      background: linear-gradient(to right, #0a2a0a, #2a8b2a);
+    }
+
+    .stat-valore {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--oro);
+      width: 25px;
+      text-align: right;
+    }
+
+    .sezione-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--oro);
+      letter-spacing: 0.1em;
+      margin: 0.75rem 0 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(200,134,10,0.15);
+    }
+
+    .sezione-label.rossa {
+      color: #cc4444;
+      border-top-color: rgba(139,34,0,0.2);
+    }
+
+    .sezione-label.viola {
+      color: #9988dd;
+      border-top-color: rgba(80,60,140,0.2);
+    }
+
+    /* ===== NAVIGAZIONE ===== */
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10,6,0,0.95);
+      border-top: 1px solid rgba(200,134,10,0.2);
+      display: flex;
+      z-index: 100;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .nav-item {
+      flex: 1;
+      padding: 0.75rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+      color: var(--seppia-chiaro);
+    }
+
+    .nav-item.active {
+      color: var(--oro-chiaro);
+    }
+
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .nav-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== ANIMAZIONI ===== */
+    @keyframes glow-pulse {
+      0%, 100% { text-shadow: 0 0 30px rgba(200,134,10,0.8), 0 0 60px rgba(200,134,10,0.4), 2px 2px 4px rgba(0,0,0,0.9); }
+      50% { text-shadow: 0 0 40px rgba(200,134,10,1), 0 0 80px rgba(200,134,10,0.6), 2px 2px 4px rgba(0,0,0,0.9); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes particella {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-60px) scale(0.3); }
+    }
+
+    .particella {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.2rem;
+      animation: particella 1s ease-out forwards;
+      z-index: 9998;
+    }
+
+    @keyframes scena-entra {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .scena-entra {
+      animation: scena-entra 0.4s ease forwards;
+    }
+
+    .screen-active {
+      display: flex !important;
+      animation: fadeIn 0.4s ease;
+    }
+
+    /* Decorazioni angolari */
+    .corner-ornament {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      opacity: 0.4;
+    }
+    .corner-ornament.tl { top: 1rem; left: 1rem; border-top: 1px solid var(--oro); border-left: 1px solid var(--oro); }
+    .corner-ornament.tr { top: 1rem; right: 1rem; border-top: 1px solid var(--oro); border-right: 1px solid var(--oro); }
+    .corner-ornament.bl { bottom: 5rem; left: 1rem; border-bottom: 1px solid var(--oro); border-left: 1px solid var(--oro); }
+    .corner-ornament.br { bottom: 5rem; right: 1rem; border-bottom: 1px solid var(--oro); border-right: 1px solid var(--oro); }
+
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem;
+      padding-bottom: 5rem;
+    }
+
+    .screen-header {
+      padding: 2rem 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(200,134,10,0.2);
+    }
+
+    .screen-header-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.1rem;
+      color: var(--oro-chiaro);
+    }
+
+    .screen-header-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--seppia-chiaro);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .personaggio-img {
+      width: 100%;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      filter: sepia(0.15) contrast(1.05);
+      border: 1px solid rgba(200,134,10,0.2);
+    }
+
+    .personaggio-card.antagonista .personaggio-img {
+      border-color: rgba(139,34,0,0.3);
+      filter: sepia(0.3) contrast(1.1);
+    }
+
+    .personaggio-card.ambiguo .personaggio-img {
+      border-color: rgba(80,60,140,0.3);
+    }
+
+    .scene-img {
+      width: 100%;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(200,134,10,0.15);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SCHERMATA VIDEO INTRO ===== -->
+<div id="screen-video" class="screen-active" style="position:fixed; inset:0; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999;">
+  <video id="intro-video" autoplay muted playsinline style="width:100%; height:100%; object-fit:cover;">
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+  <button onclick="skipIntro()" style="position:absolute; bottom:2.5rem; right:1.5rem; background:rgba(0,0,0,0.6); border:1px solid rgba(200,134,10,0.4); color:var(--oro); font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; padding:0.5rem 1rem; border-radius:2px; cursor:pointer;">
+    Salta ▶
+  </button>
+</div>
+
+<!-- ===== SCHERMATA HOME ===== -->
+<div id="screen-home" style="display:none;">
+  <div class="corner-ornament tl"></div>
+  <div class="corner-ornament tr"></div>
+  <div class="corner-ornament bl"></div>
+  <div class="corner-ornament br"></div>
+
+  <div class="home-header">
+    <div class="home-title">Gabriel<br>e Geus</div>
+    <div class="home-subtitle">Gli Inizi · Vol. I</div>
+    <div class="home-divider"></div>
+  </div>
+
+  <div class="home-cover">
+    <div>
+      <div class="cover-frame">
+        <img src="copertina_Volume_1_V1.png" class="cover-img" alt="Gabriel e Geus">
+      </div>
+      <div class="home-author">Gaetano Bertozzi Avanzini</div>
+    </div>
+  </div>
+
+  <div class="home-actions">
+    <button class="btn-primary" onclick="iniziaGioco()">
+      ⚔ Gioca il Romanzo ⚔
+    </button>
+    <button class="btn-primary" onclick="showScreen('intro')" style="background:linear-gradient(135deg,#5a3e00,#8b6000,#5a3e00); margin-top:0.5rem;">
+      ✦ Inizia l'Avventura ✦
+    </button>
+    <button class="btn-secondary" onclick="showScreen('stats')">
+      Schede Personaggi
+    </button>
+    <button class="btn-secondary" onclick="showScreen('info')" style="font-size:0.75rem; padding:0.5rem; opacity:0.6;">
+      ℹ︎ Informazioni & Copyright
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA INTRO / CAPITOLO 1 ===== -->
+<div id="screen-intro" style="display:none; flex-direction:column; min-height:100vh; background:radial-gradient(ellipse 100% 50% at 50% 0%, #2a1400 0%, #0f0800 60%, #060300 100%);">
+
+  <div style="padding: 2rem 1.5rem 1rem; border-bottom: 1px solid rgba(200,134,10,0.2);">
+    <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--oro); letter-spacing:0.3em; text-transform:uppercase;">Capitolo 1</div>
+    <div style="font-family:'Cinzel Decorative',serif; font-size:1.3rem; color:var(--testo-chiaro); margin-top:0.25rem;">I Due Universi</div>
+  </div>
+
+  <div style="flex:1; padding:1.5rem; overflow-y:auto; padding-bottom:5rem;">
+    <img src="scene-lago.png" class="scene-img" alt="Gabriel e Geus">
+    <p class="narrazione">
+      La stanza era particolarmente ordinata per un ragazzo della sua età. Non che fosse merito suo, ma ordine e pulito colpivano qualunque persona, essere o quasi angelo che avesse osservato i dintorni del suo letto.
+    </p>
+
+    <div class="narrazione-geus">
+      C'è qualcosa di stranamente vulnerabile in un essere umano che dorme. Voi comuni abbassate tutte le difese, vi abbandonate completamente a qualcosa che non controllate, e lo fate ogni notte con una fiducia che, ammettiamolo, rasenta l'incoscienza.
+    </div>
+
+    <p class="narrazione">
+      Gabriel aveva solo 12 anni ma il suo comportamento aveva già destato le attenzioni dei Piani Superiori...
+    </p>
+
+    <div style="text-align:center; margin: 2rem 0; opacity:0.5;">
+      <div style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.3em; color:var(--oro);">— ✦ —</div>
+    </div>
+
+    <div class="narrazione-geus">
+      Io sono (almeno così mi è stato insegnato) Geus, un quasi angelo. Ho solo 800 anni e mi ritrovo al terzo stadio di sviluppo della mia essenza. È stata modestamente una carriera assai veloce — e voi che continuate a lamentarvi degli stipendi!
+    </div>
+  </div>
+
+  <div style="padding:1.25rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button class="btn-primary" onclick="showScreen('stats')">
+      Continua →
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA STATISTICHE ===== -->
+<div id="screen-stats" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0f0800 0%,#1a0e00 100%);">
+
+  <div class="screen-header">
+    <div class="screen-header-title">Schede Personaggi</div>
+    <div class="screen-header-sub">Gabriel e Geus — Gli Inizi</div>
+  </div>
+
+  <!-- TAB -->
+  <div class="stats-tabs">
+    <button class="stats-tab active" onclick="showTab('task-force')">Task Force</button>
+    <button class="stats-tab" onclick="showTab('antagonisti')">Antagonisti</button>
+    <button class="stats-tab" onclick="showTab('ambigui')">Deus</button>
+    <button class="stats-tab" onclick="showTab('vesper')">Vesper</button>
+  </div>
+
+  <div class="scroll-content">
+
+    <!-- ===== TAB: TASK FORCE ===== -->
+    <div id="tab-task-force" class="tab-panel active">
+
+      <!-- GABRIEL -->
+      <div class="personaggio-card">
+        <img src="img-gabriel.png" class="personaggio-img" alt="Gabriel">
+        <div class="personaggio-nome">Gabriel</div>
+        <div class="personaggio-ruolo">Comune · 12 anni · Portatore del Dono</div>
+        <div class="personaggio-desc">"Un ragazzo ordinario con un dono straordinario. La sua forza non è nei muscoli, ma nella testardaggine con cui rifiuta di cedere."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Fisica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:30%"></div></div>
+          <div class="stat-valore">3</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Resistenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:30%"></div></div>
+          <div class="stat-valore">3</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:50%"></div></div>
+          <div class="stat-valore">5</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:30%"></div></div>
+          <div class="stat-valore">3</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Istinto</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:40%"></div></div>
+          <div class="stat-valore">4</div>
+        </div>
+        <div class="sezione-label">FIDUCIA</div>
+        <div class="stat-row">
+          <div class="stat-nome">→ Deus</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:40%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">4</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">→ Vesper</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:20%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">2</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">→ Se Stesso</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:30%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">3</div>
+        </div>
+      </div>
+
+      <!-- GEUS -->
+      <div class="personaggio-card">
+        <img src="img-geus.png" class="personaggio-img" alt="Geus">
+        <div class="personaggio-nome">Geus</div>
+        <div class="personaggio-ruolo">Quasi Angelo · 800 anni · III Stadio</div>
+        <div class="personaggio-desc">"800 anni di esistenza e ancora non capisco del tutto voi umani. Forse è per questo che mi diverto così tanto a osservarvi."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:80%"></div></div>
+          <div class="stat-valore">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+          <div class="stat-valore">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+          <div class="stat-valore">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Controllo</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:90%"></div></div>
+          <div class="stat-valore">9</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Piume</div>
+          <div class="stat-barra-container"><div class="stat-barra verde" style="width:90%"></div></div>
+          <div class="stat-valore" style="color:#8f8">9</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Fid. in Gabriel</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:40%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">4</div>
+        </div>
+      </div>
+
+      <!-- SPAZIOSO -->
+      <div class="personaggio-card">
+        <img src="img-spazioso.png" class="personaggio-img" alt="Spazioso">
+        <div class="personaggio-nome">Spazioso</div>
+        <div class="personaggio-ruolo">Quasi Angelo · Task Force · Specialista Difensivo</div>
+        <div class="personaggio-desc">"Il silenzio di Spazioso pesa quanto le sue parole. Quando parla, vale la pena ascoltare."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+          <div class="stat-valore">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Fisica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:80%"></div></div>
+          <div class="stat-valore">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:60%"></div></div>
+          <div class="stat-valore">6</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:80%"></div></div>
+          <div class="stat-valore">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Controllo</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:60%"></div></div>
+          <div class="stat-valore">6</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Piume</div>
+          <div class="stat-barra-container"><div class="stat-barra verde" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#8f8">7</div>
+        </div>
+      </div>
+
+      <!-- MARTIRIO -->
+      <div class="personaggio-card">
+        <img src="img-martirio.png" class="personaggio-img" alt="Martirio">
+        <div class="personaggio-nome">Martirio</div>
+        <div class="personaggio-ruolo">Quasi Angelo · Task Force · Specialista Offensivo</div>
+        <div class="personaggio-desc">"Il nome è un po' drammatico, lo ammetto. Ma chi lo ha scelto aveva ragione: Martirio porta il peso di ogni battaglia come fosse l'ultima."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:65%"></div></div>
+          <div class="stat-valore">6</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Fisica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+          <div class="stat-valore">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:80%"></div></div>
+          <div class="stat-valore">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:50%"></div></div>
+          <div class="stat-valore">5</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Controllo</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:70%"></div></div>
+          <div class="stat-valore">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Piume</div>
+          <div class="stat-barra-container"><div class="stat-barra verde" style="width:60%"></div></div>
+          <div class="stat-valore" style="color:#8f8">6</div>
+        </div>
+      </div>
+
+      <!-- ARCANGELO SUPERIORE -->
+      <div class="personaggio-card" style="border-color: rgba(200,134,10,0.5); background: linear-gradient(135deg, rgba(61,34,0,0.7), rgba(20,10,0,0.9));">
+        <img src="img-arcangelo.png" class="personaggio-img" alt="Arcangelo Superiore">
+        <div class="personaggio-nome" style="display:flex; align-items:center; gap:0.5rem;">
+          Arcangelo Superiore
+          <span style="font-family:'Cinzel',serif; font-size:0.55rem; color:#cc4444; letter-spacing:0.1em; border:1px solid rgba(200,50,50,0.4); padding:0.1rem 0.4rem; border-radius:2px;">?</span>
+        </div>
+        <div class="personaggio-ruolo">Arcangelo · Piani Superiori · Ruolo non ancora definito</div>
+        <div class="personaggio-desc">"Tra coloro che vegliano dall'alto, non tutti guardano nella stessa direzione. Alcuni osservano Gabriel con interesse — ma non è detto che quell'interesse sia benevolo."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div>
+          <div class="stat-valore">10</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div>
+          <div class="stat-valore">10</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div>
+          <div class="stat-valore">10</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Autorità</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div>
+          <div class="stat-valore">10</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Piume</div>
+          <div class="stat-barra-container"><div class="stat-barra verde" style="width:100%"></div></div>
+          <div class="stat-valore" style="color:#8f8">10</div>
+        </div>
+        <div style="margin-top:1rem; padding:0.75rem; background:rgba(200,50,50,0.06); border:1px solid rgba(200,50,50,0.2); border-radius:3px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:#cc4444; letter-spacing:0.1em; margin-bottom:0.4rem;">AVVERTENZA</div>
+          <div style="font-size:0.8rem; color:var(--testo); font-style:italic; line-height:1.6;">La sua vera natura non è ancora stata rivelata. Potrebbe essere un alleato — o il traditore che ha scatenato tutto.</div>
+        </div>
+      </div>
+
+    </div><!-- fine tab-task-force -->
+
+    <!-- ===== TAB: ANTAGONISTI ===== -->
+    <div id="tab-antagonisti" class="tab-panel">
+
+      <!-- GOLERT -->
+      <div class="personaggio-card antagonista">
+        <img src="img-golert.png" class="personaggio-img" alt="Golert">
+        <div class="personaggio-nome">Golert</div>
+        <div class="personaggio-ruolo">Angelo Caduto · Caos · Antagonista Principale</div>
+        <div class="personaggio-desc">"Golert non vuole il potere. Vuole vedere il mondo bruciare e ridere mentre succede. Questo lo rende più pericoloso di qualsiasi tiranno."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:90%"></div></div>
+          <div class="stat-valore" style="color:#e05050">9</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:90%"></div></div>
+          <div class="stat-valore" style="color:#e05050">9</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:80%"></div></div>
+          <div class="stat-valore" style="color:#e05050">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Fisica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#e05050">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Imprevedibilità</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:100%"></div></div>
+          <div class="stat-valore" style="color:#e05050">10</div>
+        </div>
+        <div class="sezione-label rossa">CORRUZIONE</div>
+        <div class="stat-row">
+          <div class="stat-nome">Oscurità</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:90%"></div></div>
+          <div class="stat-valore" style="color:#e05050">9</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Manipolazione</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:80%"></div></div>
+          <div class="stat-valore" style="color:#e05050">8</div>
+        </div>
+      </div>
+
+      <!-- CRUDELIUS -->
+      <div class="personaggio-card antagonista">
+        <img src="img-crudelius.png" class="personaggio-img" alt="Crudelius">
+        <div class="personaggio-nome">Crudelius</div>
+        <div class="personaggio-ruolo">Angelo Caduto · Ordine Corrotto · Antagonista</div>
+        <div class="personaggio-desc">"Crudelius è l'opposto di Gabriel in ogni cosa. Dove Gabriel si fida, lui sospetta. Dove Gabriel si apre, lui chiude. Specchi rotti dello stesso vetro."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:80%"></div></div>
+          <div class="stat-valore" style="color:#e05050">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Fisica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:60%"></div></div>
+          <div class="stat-valore" style="color:#e05050">6</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#e05050">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#e05050">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Istinto</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:80%"></div></div>
+          <div class="stat-valore" style="color:#e05050">8</div>
+        </div>
+        <div class="sezione-label rossa">CORRUZIONE</div>
+        <div class="stat-row">
+          <div class="stat-nome">Oscurità</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#e05050">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Fid. in Se Stesso</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:100%"></div></div>
+          <div class="stat-valore" style="color:#e05050">10</div>
+        </div>
+      </div>
+
+      <!-- 3 ANGELI OSCURI -->
+      <div class="personaggio-card antagonista">
+        <img src="scene-scudo.png" class="personaggio-img" alt="I Tre Angeli Oscuri">
+        <div class="personaggio-nome">I Tre Angeli Oscuri</div>
+        <div class="personaggio-ruolo">Angeli Caduti · Servitori di Golert</div>
+        <div class="personaggio-desc">"Non hanno più nomi propri. Li hanno ceduti insieme alle piume. Ora sono solo strumenti — affilati, obbedienti, e molto pazienti."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Fisica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#e05050">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:60%"></div></div>
+          <div class="stat-valore" style="color:#e05050">6</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:50%"></div></div>
+          <div class="stat-valore" style="color:#e05050">5</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Obbedienza</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:100%"></div></div>
+          <div class="stat-valore" style="color:#e05050">10</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Piume Nere</div>
+          <div class="stat-barra-container"><div class="stat-barra corruzione" style="width:100%"></div></div>
+          <div class="stat-valore" style="color:#e05050">10</div>
+        </div>
+      </div>
+
+    </div><!-- fine tab-antagonisti -->
+
+    <!-- ===== TAB: DEUS ===== -->
+    <div id="tab-ambigui" class="tab-panel">
+
+      <!-- DEUS -->
+      <div class="personaggio-card" style="background:linear-gradient(135deg,rgba(61,40,0,0.7),rgba(20,12,0,0.9)); border-color:rgba(255,200,50,0.4);">
+        <img src="img-deus.png" class="personaggio-img" alt="Deus">
+        <div class="personaggio-nome" style="color:#ffd166;">Deus</div>
+        <div class="personaggio-ruolo">L'Arcano · Entità Suprema · Oltre ogni classificazione</div>
+        <div class="personaggio-desc">"Non è un personaggio che si incontra. È una presenza che si avverte. Quando parla, il silenzio intorno cambia consistenza."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
+          <div class="stat-valore" style="color:#ffd166">∞</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Potere</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
+          <div class="stat-valore" style="color:#ffd166">∞</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Conoscenza</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:100%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
+          <div class="stat-valore" style="color:#ffd166">∞</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Intervento Diretto</div>
+          <div class="stat-barra-container"><div class="stat-barra" style="width:10%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
+          <div class="stat-valore" style="color:#ffd166">1</div>
+        </div>
+        <div style="margin-top:1rem; padding:0.75rem; background:rgba(255,200,50,0.06); border:1px solid rgba(255,200,50,0.2); border-radius:3px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:#ffd166; letter-spacing:0.1em; margin-bottom:0.4rem;">NOTA</div>
+          <div style="font-size:0.8rem; color:var(--testo); font-style:italic; line-height:1.6;">Non agisce direttamente nel mondo dei Comuni. Le sue leggi vietano l'interferenza diretta — eppure ha scelto Gabriel. Il perché è ancora tutto da scoprire.</div>
+        </div>
+      </div>
+
+    </div><!-- fine tab-ambigui -->
+
+    <!-- ===== TAB: VESPER ===== -->
+    <div id="tab-vesper" class="tab-panel">
+
+      <!-- VESPER -->
+      <div class="personaggio-card ambiguo">
+        <img src="img-vesper.png" class="personaggio-img" alt="Vesper">
+        <div class="personaggio-nome">Vesper</div>
+        <div class="personaggio-ruolo">Entità del Caos · Nato dalla Frattura · Ambiguo</div>
+        <div class="personaggio-desc">"Vesper non è né buono né cattivo. È ciò che nasce quando le regole si spezzano. La domanda non è di che parte stia — ma se abbia davvero una scelta."</div>
+        <div class="stat-row">
+          <div class="stat-nome">Essenza</div>
+          <div class="stat-barra-container"><div class="stat-barra viola" style="width:85%"></div></div>
+          <div class="stat-valore" style="color:#9988dd">?</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Forza Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra viola" style="width:80%"></div></div>
+          <div class="stat-valore" style="color:#9988dd">8</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Res. Magica</div>
+          <div class="stat-barra-container"><div class="stat-barra viola" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#9988dd">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Imprevedibilità</div>
+          <div class="stat-barra-container"><div class="stat-barra viola" style="width:90%"></div></div>
+          <div class="stat-valore" style="color:#9988dd">9</div>
+        </div>
+        <div class="sezione-label viola">MAGIA CAOTICA</div>
+        <div class="stat-row">
+          <div class="stat-nome">Caos</div>
+          <div class="stat-barra-container"><div class="stat-barra viola" style="width:100%"></div></div>
+          <div class="stat-valore" style="color:#9988dd">∞</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">Allineamento</div>
+          <div class="stat-barra-container"><div class="stat-barra viola" style="width:50%"></div></div>
+          <div class="stat-valore" style="color:#9988dd">—</div>
+        </div>
+        <div style="margin-top:1rem; padding:0.75rem; background:rgba(80,60,140,0.1); border:1px solid rgba(80,60,140,0.2); border-radius:3px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:#9988dd; letter-spacing:0.1em; margin-bottom:0.4rem;">NOTA</div>
+          <div style="font-size:0.8rem; color:var(--testo); font-style:italic; line-height:1.6;">La sua esistenza dipende dall'equilibrio del caos. Non può collaborare direttamente con la Task Force — ma potrebbe scegliere di non ostacolarla.</div>
+        </div>
+      </div>
+
+    </div><!-- fine tab-vesper -->
+
+    </div><!-- fine scroll-content -->
+
+  <div style="padding:1rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button class="btn-secondary" onclick="showScreen('home')">
+      ← Torna alla Home
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA INFO / COPYRIGHT ===== -->
+<div id="screen-info" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0f0800 0%,#1a0e00 100%);">
+
+  <div class="screen-header">
+    <div class="screen-header-title">Informazioni</div>
+    <div class="screen-header-sub">Gabriel e Geus — Gli Inizi</div>
+  </div>
+
+  <div class="scroll-content">
+
+    <!-- Logo / Titolo -->
+    <div style="text-align:center; padding: 2rem 0 1.5rem;">
+      <div style="font-family:'Cinzel Decorative',serif; font-size:1.6rem; color:var(--oro-chiaro); text-shadow:0 0 20px rgba(200,134,10,0.5); line-height:1.2;">Gabriel<br>e Geus</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--seppia-chiaro); letter-spacing:0.3em; text-transform:uppercase; margin-top:0.5rem;">Gli Inizi · Vol. I</div>
+      <div style="width:80px; height:1px; background:linear-gradient(to right, transparent, var(--oro), transparent); margin:1rem auto;"></div>
+    </div>
+
+    <!-- Info App -->
+    <div style="background:linear-gradient(135deg,rgba(61,34,0,0.5),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1.25rem; margin-bottom:1.25rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--oro); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">App Companion Ufficiale</div>
+      <p style="font-size:0.9rem; color:var(--testo-chiaro); line-height:1.7;">Questa app è il companion ufficiale del romanzo <em>Gabriel e Geus — Gli Inizi</em>. Contiene le schede dei personaggi, il sistema di statistiche e i contenuti esclusivi della saga.</p>
+    </div>
+
+    <!-- Autore -->
+    <div style="background:linear-gradient(135deg,rgba(61,34,0,0.5),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1.25rem; margin-bottom:1.25rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--oro); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Autore</div>
+      <p style="font-size:1rem; color:var(--testo-chiaro); font-family:'Cinzel',serif; margin-bottom:0.4rem;">Gaetano Bertozzi Avanzini</p>
+    </div>
+
+    <!-- Copyright Libro -->
+    <div style="background:linear-gradient(135deg,rgba(61,34,0,0.5),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1.25rem; margin-bottom:1.25rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--oro); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Copyright</div>
+      <p style="font-size:0.85rem; color:var(--testo); line-height:1.7; margin-bottom:0.75rem;">© 2025 Gaetano Bertozzi Avanzini. Tutti i diritti riservati.</p>
+      <p style="font-size:0.8rem; color:var(--seppia-chiaro); line-height:1.7; font-style:italic;">Nessuna parte di questa app, inclusi testi, personaggi, illustrazioni e contenuti, può essere riprodotta, distribuita o trasmessa in qualsiasi forma senza il previo consenso scritto dell'autore.</p>
+    </div>
+
+    <!-- Copyright App -->
+    <div style="background:linear-gradient(135deg,rgba(61,34,0,0.5),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1.25rem; margin-bottom:1.25rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--oro); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Copyright App</div>
+      <p style="font-size:0.85rem; color:var(--testo); line-height:1.7; margin-bottom:0.5rem;">© 2025 Gaetano Bertozzi Avanzini<br><em>Gabriel e Geus — App Companion Ufficiale</em></p>
+      <p style="font-size:0.8rem; color:var(--seppia-chiaro); line-height:1.7; font-style:italic;">I personaggi, la storia, il sistema di gioco e tutti i contenuti originali sono proprietà esclusiva dell'autore. Qualsiasi utilizzo non autorizzato è vietato.</p>
+    </div>
+
+    <!-- Versione -->
+    <div style="text-align:center; padding:1rem 0 0.5rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--seppia-chiaro); letter-spacing:0.15em;">VERSIONE 1.0 · 2025</div>
+    </div>
+
+  </div><!-- fine scroll-content -->
+
+  <div style="padding:1rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button class="btn-secondary" onclick="showScreen('home')">
+      ← Torna alla Home
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA GIOCO ===== -->
+<div id="screen-gioco" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0a0500 0%,#1a0e00 100%);">
+
+  <div class="screen-header">
+    <div id="gioco-capitolo" class="screen-header-sub">Capitolo</div>
+    <div id="gioco-titolo" class="screen-header-title">Scena</div>
+  </div>
+
+  <!-- TRACKER FIDUCIA -->
+  <div style="padding:0.75rem 1.25rem; background:rgba(0,0,0,0.3); border-bottom:1px solid rgba(200,134,10,0.15);">
+    <div style="font-family:'Cinzel',serif; font-size:0.6rem; color:var(--oro); letter-spacing:0.15em; margin-bottom:0.5rem;">FIDUCIA</div>
+    <div style="display:flex; gap:0.5rem;">
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">DEUS</div>
+        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:#4a90d9;" id="tracker-deus">0</div>
+      </div>
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">VESPER</div>
+        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:#9988dd;" id="tracker-vesper">0</div>
+      </div>
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">SE STESSO</div>
+        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:var(--oro-chiaro);" id="tracker-se">0</div>
+      </div>
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">SCENA</div>
+        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:var(--testo);" id="tracker-scena">1/16</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1; overflow-y:auto; padding:1.25rem; padding-bottom:5rem;">
+
+    <!-- IMMAGINE SCENA -->
+    <img id="gioco-img" src="" class="scene-img" alt="scena" style="display:none !important;">
+
+    <!-- DESCRIZIONE SCENA -->
+    <div id="gioco-desc" class="narrazione" style="margin-bottom:1.5rem;"></div>
+
+    <!-- VOCE DI GEUS -->
+    <div id="gioco-geus" class="narrazione-geus" style="display:none; margin-bottom:1.5rem;"></div>
+
+    <!-- DADO -->
+    <div id="gioco-dado-container" style="display:none; text-align:center; margin:1.5rem 0;">
+      <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--oro); letter-spacing:0.15em; margin-bottom:1rem;" id="gioco-dado-label">LANCIA IL DADO</div>
+      <div id="dado-display" style="font-size:3.5rem; line-height:1; margin-bottom:1rem; transition: all 0.1s;">⚄</div>
+      <div id="dado-risultato" style="font-family:'Cinzel',serif; font-size:1.5rem; color:var(--oro-chiaro); min-height:2rem;"></div>
+      <button id="btn-lancia" class="btn-primary" style="margin-top:1rem; max-width:200px; margin-left:auto; margin-right:auto;" onclick="lanciaDado()">
+        🎲 Lancia!
+      </button>
+    </div>
+
+    <!-- SCELTE -->
+    <div id="gioco-scelte" style="display:none;">
+      <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--oro); letter-spacing:0.15em; margin-bottom:1rem;">COSA FAI?</div>
+      <div id="gioco-scelte-container" style="display:flex; flex-direction:column; gap:0.75rem;"></div>
+    </div>
+
+    <!-- ESITO -->
+    <div id="gioco-esito" style="display:none; background:linear-gradient(135deg,rgba(61,34,0,0.6),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.3); border-radius:4px; padding:1.25rem; margin-top:1rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--oro); letter-spacing:0.15em; margin-bottom:0.75rem;">ESITO</div>
+      <div id="gioco-esito-testo" class="narrazione" style="margin-bottom:0.75rem;"></div>
+      <div id="gioco-punti" style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--oro-chiaro);"></div>
+    </div>
+
+  </div>
+
+  <!-- BOTTONE AVANTI -->
+  <div style="padding:1rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button id="btn-avanti" class="btn-primary" style="display:none;" onclick="scenaSucessiva()">
+      Avanti →
+    </button>
+    <button class="btn-secondary" style="margin-top:0.5rem;" onclick="showScreen('home')">
+      ← Home
+    </button>
+  </div>
+</div>
+
+<!-- ===== SCHERMATA FINALE ===== -->
+<div id="screen-finale" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0a0500 0%,#1a0e00 100%); align-items:center; justify-content:center; padding:2rem;">
+  <div style="text-align:center; max-width:400px;">
+    <div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--oro); letter-spacing:0.3em; text-transform:uppercase; margin-bottom:1rem;">La tua storia continua...</div>
+    <div id="finale-titolo" style="font-family:'Cinzel Decorative',serif; font-size:1.8rem; color:var(--oro-chiaro); text-shadow:0 0 30px rgba(200,134,10,0.6); margin-bottom:1rem; line-height:1.2;"></div>
+    <div id="finale-desc" style="font-size:0.95rem; color:var(--testo); line-height:1.8; margin-bottom:2rem; font-style:italic;"></div>
+    <div style="background:rgba(61,34,0,0.5); border:1px solid rgba(200,134,10,0.3); border-radius:4px; padding:1.25rem; margin-bottom:2rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--oro); letter-spacing:0.15em; margin-bottom:0.75rem;">I TUOI VALORI FINALI</div>
+      <div style="display:flex; justify-content:space-around;">
+        <div style="text-align:center;">
+          <div style="font-family:'Cinzel',serif; font-size:0.6rem; color:var(--seppia-chiaro);">DEUS</div>
+          <div style="font-family:'Cinzel',serif; font-size:1.3rem; color:#4a90d9;" id="finale-deus"></div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cinzel',serif; font-size:0.6rem; color:var(--seppia-chiaro);">VESPER</div>
+          <div style="font-family:'Cinzel',serif; font-size:1.3rem; color:#9988dd;" id="finale-vesper"></div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cinzel',serif; font-size:0.6rem; color:var(--seppia-chiaro);">SE STESSO</div>
+          <div style="font-family:'Cinzel',serif; font-size:1.3rem; color:var(--oro-chiaro);" id="finale-se"></div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="resetGioco()">↺ Ricomincia</button>
+    <button class="btn-secondary" style="margin-top:0.75rem;" onclick="showScreen('home')">← Home</button>
+  </div>
+</div>
+
+<script>
+  // ===== DATI SCENE =====
+  // ===== VIDEO INTRO =====
+  function skipIntro() {
+    document.getElementById('screen-video').style.display = 'none';
+    showScreen('home');
+  }
+
+  window.addEventListener('load', () => {
+    const video = document.getElementById('intro-video');
+    if (video) {
+      video.addEventListener('ended', skipIntro);
+      // Fallback se il video non parte
+      setTimeout(() => {
+        if (document.getElementById('screen-video').style.display !== 'none') {
+          skipIntro();
+        }
+      }, 8000);
+    }
+  });
+
+  // ===== PARTICELLE FIDUCIA =====
+  function spawnParticelle(deus, vesper, se) {
+    const emojis = [];
+    for (let i = 0; i < deus; i++) emojis.push({ e: '✦', c: '#4a90d9' });
+    for (let i = 0; i < vesper; i++) emojis.push({ e: '◈', c: '#9988dd' });
+    for (let i = 0; i < se; i++) emojis.push({ e: '★', c: '#f0b429' });
+    emojis.forEach((p, i) => {
+      setTimeout(() => {
+        const el = document.createElement('div');
+        el.className = 'particella';
+        el.textContent = p.e;
+        el.style.color = p.c;
+        el.style.left = (30 + Math.random() * 40) + '%';
+        el.style.top = (40 + Math.random() * 20) + '%';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1000);
+      }, i * 150);
+    });
+  }
+
+  const scene = [
+    {
+      cap: 'Capitolo 2', titolo: "L'Incontro", img: 'scene-lago.png',
+      desc: 'Geus è apparso ai piedi del tuo letto. Un essere con le ali, che dice di essere un quasi angelo. Deus stesso ti ha parlato. Ti chiedono di partecipare a una missione che non hai scelto.',
+      geus: 'Lo so, lo so. Non è il modo più elegante di reclutare qualcuno. Ma il tuo capo — e intendo il mio capo, non il tuo professore di matematica — ha deciso che sei tu il prescelto. Personalmente avrei scelto qualcuno con più esperienza... ma eccoci qui.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: '«Sì. Mi fido di voi.»', esito: 'Hai scelto di fidarti. È un atto di coraggio, o di incoscienza. Forse entrambe le cose.', deus: 2, vesper: 0, se: 0 },
+        { testo: '«Ho bisogno di tempo per pensare.»', esito: 'Non è un rifiuto, ma non è nemmeno un sì. Gabriel impara già a navigare tra le certezze degli altri.', deus: 0, vesper: 0, se: 2 },
+        { testo: '«Va bene, ma voglio capire tutto.»', esito: 'Fiducia con condizioni. Esattamente il tipo di risposta che Geus non si aspettava.', deus: 1, vesper: 0, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 3', titolo: 'Il Lago Ghiacciato', img: 'scene-lago.png',
+      desc: 'La sveglia magica ti ha catapultato nel lago ghiacciato. L\'acqua è gelida. Geus ti osserva dalla riva con un sorriso che non promette niente di buono.',
+      geus: 'Tecnicamente questo è il tuo primo test. Tecnicamente. In realtà volevo solo vedere come reagivi. Spoiler: non male.',
+      tipo: 'dado', dado: 6,
+      esiti: [
+        { min: 1, max: 2, testo: 'Fatichi moltissimo. L\'acqua è più fredda di quanto immaginassi. Ce la fai, ma a malapena.', deus: 0, vesper: 0, se: 0 },
+        { min: 3, max: 4, testo: 'Ti muovi con difficoltà ma riesci a uscire. Geus annuisce, quasi soddisfatto.', deus: 0, vesper: 0, se: 1 },
+        { min: 5, max: 6, testo: 'Esci dal lago con una rapidità sorprendente. Geus smette di sorridere — un buon segno.', deus: 0, vesper: 0, se: 2 },
+      ]
+    },
+    {
+      cap: 'Capitolo 3', titolo: 'Le Prime Magie', img: 'scene-mangus.png',
+      desc: 'Il Professor Magus ti presenta tre arti magiche. Puoi sceglierne una da studiare per prima. La tua scelta rivela molto su di te.',
+      geus: 'Sceglie bene chi conosce se stesso. Sceglie peggio chi cerca di impressionare gli altri. Io non ti dico quale è quale.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Magia di Protezione — lo Scudo', esito: 'Hai scelto di proteggere. Prima te stesso, poi gli altri. È una scelta saggia.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Magia di Percezione — l\'Occhio', esito: 'Hai scelto di capire prima di agire. Geus ti guarda con inaspettato rispetto.', deus: 0, vesper: 1, se: 1 },
+        { testo: 'Magia del Dono — il Lamineus', esito: 'Hai scelto la tua arma naturale. È la scelta che Deus sperava facessi.', deus: 2, vesper: 0, se: 0 },
+      ]
+    },
+    {
+      cap: 'Capitolo 3', titolo: 'Le Sagome Alate', img: 'scene-scudo.png',
+      desc: '«Adesso!» ha gridato Geus. Tre sagome nere alate si avvicinano nel corridoio. È il momento di reagire.',
+      geus: 'Non pensare. Fai. Puoi pensare dopo — se sopravvivi.',
+      tipo: 'dado', dado: 10,
+      esiti: [
+        { min: 1, max: 3, testo: 'Lo scudo tiene, ma a fatica. Le sagome si ritirano. Geus ti lancia un\'occhiata preoccupata.', deus: 1, vesper: 0, se: 0 },
+        { min: 4, max: 7, testo: 'Buon risultato. Lo scudo respinge le sagome con forza. Geus sorride.', deus: 1, vesper: 0, se: 1 },
+        { min: 8, max: 10, testo: 'Eccellente. Le sagome spariscono nell\'oscurità. Geus per una volta non dice niente — il che vale più di mille complimenti.', deus: 2, vesper: 0, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 4', titolo: 'Il Passaggio nelle Nuvole', img: 'scene-fuga.png',
+      desc: 'Il torpore avanza. Tre vie si aprono davanti a voi. Ogni scelta porta in una direzione diversa — e non tutte sono sicure.',
+      geus: 'Scegli la via. E svelto: il torpore avanza.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'La via della luce', esito: 'Hai seguito la luce. È la via che Deus aveva indicato. Non sempre è la più semplice.', deus: 2, vesper: 0, se: 0 },
+        { testo: 'La via dell\'ombra', esito: 'Hai scelto l\'ombra. Qualcosa ti ha attirato lì — e non era paura.', deus: 0, vesper: 1, se: 1 },
+        { testo: 'La via del centro', esito: 'Hai scelto il compromesso. Geus avrebbe fatto lo stesso, ma non lo ammetterà mai.', deus: 1, vesper: 0, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 5', titolo: 'Crudelius al Pub', img: 'scene-crudelius-pub.png',
+      desc: 'Crudelius sta manipolando dei ragazzi al pub. Lo vedete chiaramente. Cosa fate?',
+      geus: 'Sta facendo un provino da cattivo professionista. La domanda è: tu cosa fai?',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Vi avvicinate per osservare meglio', esito: 'Avvicinarsi era rischioso. Ma hai imparato qualcosa di importante su Crudelius.', deus: 0, vesper: 1, se: 1 },
+        { testo: 'Rimanete a distanza e osservate', esito: 'La prudenza è una virtù. Geus lo sa. E per una volta è d\'accordo con te.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Uscite subito', esito: 'Sicuro, ma perdi informazioni preziose. A volte il rischio calcolato vale la pena.', deus: 1, vesper: 0, se: 0 },
+      ]
+    },
+    {
+      cap: 'Capitolo 5', titolo: 'Il Vicolo', img: 'scene-crudelius.png',
+      desc: 'Crudelius vi ha bloccati nel vicolo. Tre possibilità si aprono davanti a voi.',
+      geus: 'Come sempre, quando il destino si diverte, appaiono tre vie. Scegli bene, comune.',
+      tipo: 'dado', dado: 10,
+      esiti: [
+        { min: 1, max: 3, testo: 'La situazione è critica. Riuscite a sganciarvi per un pelo. Geus è ammutolito — e non è un buon segno.', deus: 1, vesper: 0, se: 0 },
+        { min: 4, max: 7, testo: 'Bene. Avete tenuto la posizione. Crudelius si ritira, per ora.', deus: 1, vesper: 0, se: 1 },
+        { min: 8, max: 10, testo: 'Ottimo risultato. Crudelius si ritira visibilmente sorpreso. Gabriel cresce.', deus: 1, vesper: 1, se: 0 },
+      ]
+    },
+    {
+      cap: 'Capitolo 6', titolo: 'Primo Incontro con Vesper', img: 'scene-vesper.png',
+      desc: 'Un\'entità si manifesta davanti a voi. Non è un angelo, non è un demone. Si chiama Vesper. Come reagisci?',
+      geus: 'Non è amico. Non è nemico. È qualcosa che non ha ancora deciso cosa essere.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Ti metti in guardia — non ti fidi', esito: 'Prudente. Geus approva. Ma qualcosa in te si chiede se non stai perdendo un\'opportunità.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Aspetti — vuoi capire chi è', esito: 'Hai scelto di ascoltare prima di giudicare. Vesper sembra quasi sorpreso.', deus: 0, vesper: 2, se: 0 },
+        { testo: 'Gli parli direttamente', esito: 'Coraggioso. O incosciente. Vesper ti risponde — e quello che dice cambia qualcosa.', deus: 0, vesper: 1, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 6', titolo: 'Scontro con i Deviati', img: 'scene-scudo.png',
+      desc: 'Tre angeli deviati vi bloccano la strada. Geus ti ha detto cosa fare. Ora tocca a te eseguire.',
+      geus: 'Bene, moccioso. Stavolta NON decidi tu. Ascolti ME. E fai ESATTAMENTE quello che ti dico. Chiaro?',
+      tipo: 'dado', dado: 10,
+      esiti: [
+        { min: 1, max: 3, testo: 'Difficile. I deviati sono più forti del previsto. Riuscite a fuggire ma non senza conseguenze.', deus: 1, vesper: 0, se: 0 },
+        { min: 4, max: 7, testo: 'Bene. La tattica di Geus funziona. I deviati si ritirano.', deus: 1, vesper: 0, se: 1 },
+        { min: 8, max: 10, testo: 'Perfetto. I deviati fuggono. Geus ti guarda con qualcosa che somiglia all\'orgoglio.', deus: 1, vesper: 0, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 7', titolo: 'Il Segreto di Geus', img: 'scene-lago.png',
+      desc: 'Geus ti ha rivelato qualcosa di importante su di sé. Una vulnerabilità. Un limite che non immaginavi. Come reagisci a questa rivelazione?',
+      geus: 'È uno dei pochissimi modi in cui posso morire. Te lo dico perché hai il diritto di sapere con chi stai.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Lo rassicuri — siete una squadra', esito: 'Geus non risponde subito. Poi dice: «Già». Solo questo. Ma conta moltissimo.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Resti in silenzio — stai elaborando', esito: 'Il silenzio a volte dice più delle parole. Geus lo capisce.', deus: 1, vesper: 1, se: 0 },
+        { testo: 'Fai una domanda — vuoi capire di più', esito: 'La curiosità di Gabriel è la sua forza. E Geus, sorprendentemente, risponde.', deus: 0, vesper: 1, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 8', titolo: 'Le Ipotesi del Traditore', img: 'scene-martirio.png',
+      desc: 'Tre ipotesi sul traditore sono sul tavolo. L\'Arcangelo Superiore, un Professore, un Angelo insospettabile. Chi sospetti?',
+      geus: 'Tutti potrebbero essere colpevoli. Nessuno potrebbe esserlo. Questa è la parte che odio di più di questo mestiere.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'L\'Arcangelo Superiore', esito: 'Sospettare di chi ha più potere richiede coraggio. O disperazione. Forse entrambe.', deus: 0, vesper: 1, se: 1 },
+        { testo: 'Il Professore', esito: 'Una scelta ragionata. Ma le prove sono ancora troppo scarse.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'L\'Angelo insospettabile', esito: 'Istinto puro. A volte l\'istinto ha ragione. A volte no.', deus: 0, vesper: 1, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 8', titolo: 'La Borsa Magica', img: 'scene-borsa.png',
+      desc: 'La borsa magica si apre. Tre doni si offrono a te. Puoi sceglierne solo uno.',
+      geus: 'Scegli con cura. Quello che prendi oggi ti seguirà per molto tempo.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Il Lamineus — la piuma d\'oro', esito: 'Hai scelto il potere offensivo. Esattamente ciò che Deus si aspettava.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Lo Scudo Potenziato', esito: 'Protezione prima di tutto. Una scelta matura e responsabile.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'L\'Occhio della Verità', esito: 'Vedere oltre le apparenze. Una scelta che Vesper capirebbe bene.', deus: 0, vesper: 1, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 9', titolo: 'Il Messaggio di Martirio', img: 'scene-martirio.png',
+      desc: 'Un messaggio dalla borsa: «Non fidarti di nessuno. Missione continua. — M.» Martirio vi avverte. Ma di cosa esattamente?',
+      geus: 'M. come Martirio. O come Mistero. Entrambe le cose mi preoccupano ugualmente.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Ti fidi del messaggio e cambi tattica', esito: 'La prudenza paga. Cambiate rotta. Qualcosa nel buio si muove diversamente.', deus: 1, vesper: 1, se: 0 },
+        { testo: 'Sei scettico — potrebbe essere una trappola', esito: 'Sano scetticismo. Ma il dubbio ha un costo: rimani fermo mentre il tempo passa.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Vai a cercare Martirio per capire', esito: 'Azione diretta. Gabriel impara che a volte bisogna andare verso il pericolo per capirlo.', deus: 0, vesper: 1, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 10', titolo: 'Combattimento nel Parco', img: 'scene-golert.png',
+      desc: '«Scegli!» ha gridato Geus. La borsa si è aperta. Le tre magie brillano. Il nemico è davanti a te.',
+      geus: 'Non c\'è tempo per pensare. Solo per scegliere.',
+      tipo: 'dado', dado: 20,
+      esiti: [
+        { min: 1, max: 5, testo: 'Risultato difficile. Il nemico è forte. Riuscite a sopravvivere grazie all\'intervento di Geus.', deus: 0, vesper: 0, se: 0 },
+        { min: 6, max: 12, testo: 'Buona prestazione. Il nemico si ritira. Gabriel ha dimostrato di saper combattere.', deus: 0, vesper: 0, se: 1 },
+        { min: 13, max: 18, testo: 'Ottimo. Il nemico è sconfitto. Geus sorride. «Non male per un comune.»', deus: 0, vesper: 0, se: 2 },
+        { min: 19, max: 20, testo: 'CRITICO! Un colpo perfetto. Il nemico fugge in preda al panico. Geus è senza parole.', deus: 0, vesper: 0, se: 2 },
+      ]
+    },
+    {
+      cap: 'Capitolo 11', titolo: 'La Piuma Grigia', img: 'scene-varco.png',
+      desc: 'Geus ha perso una piuma. È diventata grigia. La sua essenza si sta indebolendo. Gabriel lo scopre. Come reagisce?',
+      geus: 'Non è niente. Continua.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: 'Insisti — vuoi sapere la verità', esito: 'Geus alla fine parla. Quello che dice è più pesante di quanto immaginassi.', deus: 1, vesper: 1, se: 0 },
+        { testo: 'Rispetti la sua scelta di non parlarne', esito: 'Fiducia reciproca. Geus ti guarda diversamente da quel momento in poi.', deus: 1, vesper: 0, se: 1 },
+        { testo: 'Cerchi da solo una soluzione', esito: 'L\'indipendenza di Gabriel emerge. Geus è sorpreso — e un po\' orgoglioso.', deus: 0, vesper: 1, se: 1 },
+      ]
+    },
+    {
+      cap: 'Capitolo 12', titolo: 'Scontro Finale con Vesper', img: 'scene-vesper.png',
+      desc: 'Vesper è davanti a te. Le tre scelte si affacciano nella tua mente. Questa è la scena che determinerà il tuo futuro.',
+      geus: 'Qualunque cosa scegli, sceglila con tutto te stesso.',
+      tipo: 'dado', dado: 20,
+      esiti: [
+        { min: 1, max: 5, testo: 'Vesper è troppo forte. Ma qualcosa cambia in lui mentre ti guarda cadere. Forse è l\'inizio di qualcosa.', deus: 0, vesper: 2, se: 0 },
+        { min: 6, max: 12, testo: 'Lo scontro è equilibrato. Vesper si ritira, ma prima dice: «La prossima volta, scegli meglio.»', deus: 0, vesper: 1, se: 1 },
+        { min: 13, max: 18, testo: 'Ottimo. Vesper arretra. Ti guarda con qualcosa che non sai definire — rispetto, forse.', deus: 1, vesper: 1, se: 0 },
+        { min: 19, max: 20, testo: 'CRITICO! Vesper si ferma. «Interessante» dice, e scompare. Geus non ha mai avuto così tante domande.', deus: 1, vesper: 2, se: 0 },
+      ]
+    },
+  ];
+
+  // ===== STATO GIOCO =====
+  let stato = { deus: 0, vesper: 0, se: 0, scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0 };
+
+  function aggiornaTracker() {
+    document.getElementById('tracker-deus').textContent = stato.deus;
+    document.getElementById('tracker-vesper').textContent = stato.vesper;
+    document.getElementById('tracker-se').textContent = stato.se;
+    document.getElementById('tracker-scena').textContent = (stato.scenaCorrente + 1) + '/' + scene.length;
+  }
+
+  function caricaScena(idx) {
+    const s = scene[idx];
+    stato.dadoLanciato = false;
+    aggiornaTracker();
+
+    document.getElementById('gioco-capitolo').textContent = s.cap;
+    document.getElementById('gioco-titolo').textContent = s.titolo;
+    document.getElementById('gioco-desc').textContent = s.desc;
+
+    // Geus
+    const geusEl = document.getElementById('gioco-geus');
+    if (s.geus) { geusEl.textContent = s.geus; geusEl.style.display = 'block'; }
+    else geusEl.style.display = 'none';
+
+    // Reset esito e avanti
+    document.getElementById('gioco-esito').style.display = 'none';
+    document.getElementById('btn-avanti').style.display = 'none';
+
+    // Tipo scena
+    if (s.tipo === 'dado') {
+      document.getElementById('gioco-dado-container').style.display = 'block';
+      document.getElementById('gioco-dado-label').textContent = 'LANCIA IL D' + s.dado;
+      document.getElementById('dado-risultato').textContent = '';
+      document.getElementById('dado-display').textContent = '⚄';
+      document.getElementById('btn-lancia').disabled = false;
+      document.getElementById('gioco-scelte').style.display = 'none';
+    } else {
+      document.getElementById('gioco-dado-container').style.display = 'none';
+      document.getElementById('gioco-scelte').style.display = 'block';
+      const container = document.getElementById('gioco-scelte-container');
+      container.innerHTML = '';
+      s.scelte.forEach((sc, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'btn-secondary';
+        btn.style.textAlign = 'left';
+        btn.style.padding = '0.85rem 1rem';
+        btn.style.fontSize = '0.9rem';
+        btn.textContent = sc.testo;
+        btn.onclick = () => scegli(i);
+        container.appendChild(btn);
+      });
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function scegli(idx) {
+    const s = scene[stato.scenaCorrente];
+    const sc = s.scelte[idx];
+    stato.deus += sc.deus;
+    stato.vesper += sc.vesper;
+    stato.se += sc.se;
+    aggiornaTracker();
+    if (sc.deus + sc.vesper + sc.se > 0) spawnParticelle(sc.deus, sc.vesper, sc.se);
+    mostraEsito(sc.esito, sc.deus, sc.vesper, sc.se);
+    document.getElementById('gioco-scelte').style.display = 'none';
+  }
+
+  function lanciaDado() {
+    if (stato.dadoLanciato) return;
+    const s = scene[stato.scenaCorrente];
+    const max = s.dado;
+    let count = 0;
+    const faces = ['⚀','⚁','⚂','⚃','⚄','⚅'];
+    const interval = setInterval(() => {
+      document.getElementById('dado-display').textContent = faces[Math.floor(Math.random() * faces.length)];
+      count++;
+      if (count > 15) {
+        clearInterval(interval);
+        const risultato = Math.floor(Math.random() * max) + 1;
+        stato.risultatoDado = risultato;
+        stato.dadoLanciato = true;
+        document.getElementById('dado-display').textContent = risultato;
+        document.getElementById('dado-risultato').textContent = risultato + ' su ' + max;
+        document.getElementById('btn-lancia').disabled = true;
+        const esito = s.esiti.find(e => risultato >= e.min && risultato <= e.max);
+        if (esito) {
+          stato.deus += esito.deus;
+          stato.vesper += esito.vesper;
+          stato.se += esito.se;
+          aggiornaTracker();
+          if (esito.deus + esito.vesper + esito.se > 0) spawnParticelle(esito.deus, esito.vesper, esito.se);
+          setTimeout(() => mostraEsito(esito.testo, esito.deus, esito.vesper, esito.se), 500);
+        }
+      }
+    }, 80);
+  }
+
+  function mostraEsito(testo, deus, vesper, se) {
+    const el = document.getElementById('gioco-esito');
+    document.getElementById('gioco-esito-testo').textContent = testo;
+    let punti = '';
+    if (deus > 0) punti += '+' + deus + ' Fiducia Deus  ';
+    if (vesper > 0) punti += '+' + vesper + ' Fiducia Vesper  ';
+    if (se > 0) punti += '+' + se + ' Fiducia Se Stesso';
+    if (!punti) punti = 'Nessun punto fiducia questa volta.';
+    document.getElementById('gioco-punti').textContent = punti;
+    el.style.display = 'block';
+    document.getElementById('btn-avanti').style.display = 'block';
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+  }
+
+  function scenaSucessiva() {
+    stato.scenaCorrente++;
+    if (stato.scenaCorrente >= scene.length) {
+      mostraFinale();
+    } else {
+      // Animazione transizione
+      const content = document.querySelector('#screen-gioco > div[style*="overflow-y"]');
+      if (content) {
+        content.style.opacity = '0';
+        content.style.transition = 'opacity 0.2s';
+        setTimeout(() => {
+          caricaScena(stato.scenaCorrente);
+          content.style.opacity = '1';
+        }, 200);
+      } else {
+        caricaScena(stato.scenaCorrente);
+      }
+    }
+  }
+
+  function mostraFinale() {
+    showScreen('finale');
+    document.getElementById('finale-deus').textContent = stato.deus;
+    document.getElementById('finale-vesper').textContent = stato.vesper;
+    document.getElementById('finale-se').textContent = stato.se;
+
+    let titolo, desc;
+    const max = Math.max(stato.deus, stato.vesper, stato.se);
+    if (stato.deus === max) {
+      titolo = 'Book 2B — La Via della Missione';
+      desc = 'La tua fiducia in Deus è stata la più forte. Gabriel continuerà la sua missione al fianco della Task Force ufficiale, seguendo il cammino della fede e del dovere. Il tuo Book 2 è: La Via della Missione.';
+    } else if (stato.vesper === max) {
+      titolo = 'Book 2A — La Via di Vesper';
+      desc = 'La tua fiducia in Vesper è stata la più forte. Gabriel seguirà Vesper verso Torino, alla ricerca di una verità che nessuno vuole ammettere. Il tuo Book 2 è: La Via di Vesper.';
+    } else {
+      titolo = 'Book 2C — La Via dell\'Indipendenza';
+      desc = 'La tua fiducia in te stesso è stata la più forte. Gabriel formerà una Task Force autonoma, libera da vincoli e da lealtà imposte. Il tuo Book 2 è: La Via dell\'Indipendenza.';
+    }
+    document.getElementById('finale-titolo').textContent = titolo;
+    document.getElementById('finale-desc').textContent = desc;
+  }
+
+  function resetGioco() {
+    stato = { deus: 0, vesper: 0, se: 0, scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0 };
+    iniziaGioco();
+  }
+
+  function iniziaGioco() {
+    showScreen('gioco');
+    caricaScena(0);
+  }
+
+  function showScreen(name) {
+    document.querySelectorAll('[id^="screen-"]').forEach(s => {
+      s.style.display = 'none';
+      s.classList.remove('screen-active');
+    });
+    const target = document.getElementById('screen-' + name);
+    if (target) {
+      target.style.display = 'flex';
+      target.classList.add('screen-active');
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function showTab(tabName) {
+    document.querySelectorAll('.stats-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + tabName).classList.add('active');
+  }
+</script>
+
+</body>
+</html>

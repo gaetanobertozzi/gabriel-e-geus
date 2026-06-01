@@ -555,7 +555,10 @@
     }
 
     .scene-img {
-      width: 100%;
+      width: 65%;
+      max-width: 320px;
+      display: block;
+      margin: 0 auto 1rem auto;
       border-radius: 3px;
       margin-bottom: 1rem;
       border: 1px solid rgba(200,134,10,0.15);
@@ -589,9 +592,6 @@
   <div class="home-actions">
     <button class="btn-primary" onclick="iniziaGioco()">
       ⚔ Gioca il Romanzo ⚔
-    </button>
-    <button class="btn-primary" onclick="showScreen('intro')" style="background:linear-gradient(135deg,#5a3e00,#8b6000,#5a3e00); margin-top:0.5rem;">
-      ✦ Inizia l'Avventura ✦
     </button>
     <button class="btn-secondary" onclick="showScreen('stats')">
       Schede Personaggi
@@ -651,6 +651,7 @@
   <div class="stats-tabs">
     <button class="stats-tab active" onclick="showTab('task-force')">Task Force</button>
     <button class="stats-tab" onclick="showTab('antagonisti')">Antagonisti</button>
+    <button class="stats-tab" onclick="showTab('deus')">Deus</button>
     <button class="stats-tab" onclick="showTab('ambigui')">Vesper</button>
   </div>
 
@@ -990,7 +991,24 @@
 
     </div><!-- fine tab-antagonisti -->
 
+    
+    <div id="tab-deus" class="tab-panel">
+      <div class="personaggio-card">
+        <img src="img-deus.png" class="personaggio-img" alt="Deus">
+        <div class="personaggio-nome">Deus</div>
+        <div class="personaggio-ruolo">Entità Suprema · Creatore · Oltre ogni classificazione</div>
+        <div class="personaggio-desc">"L'origine di tutto. Nessuno conosce la sua vera estensione."</div>
+
+        <div class="stat-row"><div class="stat-nome">Potere</div><div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div><div class="stat-valore">10</div></div>
+        <div class="stat-row"><div class="stat-nome">Essenza</div><div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div><div class="stat-valore">10</div></div>
+        <div class="stat-row"><div class="stat-nome">Forza Magica</div><div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div><div class="stat-valore">10</div></div>
+        <div class="stat-row"><div class="stat-nome">Resistenza</div><div class="stat-barra-container"><div class="stat-barra" style="width:100%"></div></div><div class="stat-valore">10</div></div>
+        <div class="stat-row"><div class="stat-nome">Volontà</div><div class="stat-barra-container"><div class="stat-barra verde" style="width:100%"></div></div><div class="stat-valore">10</div></div>
+      </div>
+    </div>
+
     <!-- ===== TAB: VESPER ===== -->
+
     <div id="tab-ambigui" class="tab-panel">
 
       <!-- VESPER -->

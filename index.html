@@ -484,28 +484,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes particella {
-      0% { opacity: 1; transform: translateY(0) scale(1); }
-      100% { opacity: 0; transform: translateY(-60px) scale(0.3); }
-    }
-
-    .particella {
-      position: fixed;
-      pointer-events: none;
-      font-size: 1.2rem;
-      animation: particella 1s ease-out forwards;
-      z-index: 9998;
-    }
-
-    @keyframes scena-entra {
-      from { opacity: 0; transform: translateX(30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .scena-entra {
-      animation: scena-entra 0.4s ease forwards;
-    }
-
     .screen-active {
       display: flex !important;
       animation: fadeIn 0.4s ease;
@@ -552,7 +530,11 @@
     }
 
     .personaggio-img {
-      width: 100%;
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
       border-radius: 3px;
       margin-bottom: 1rem;
       filter: sepia(0.15) contrast(1.05);
@@ -560,11 +542,15 @@
     }
 
     .personaggio-card.antagonista .personaggio-img {
+      width: 220px;
+      height: auto;
       border-color: rgba(139,34,0,0.3);
       filter: sepia(0.3) contrast(1.1);
     }
 
     .personaggio-card.ambiguo .personaggio-img {
+      width: 220px;
+      height: auto;
       border-color: rgba(80,60,140,0.3);
     }
 
@@ -578,18 +564,8 @@
 </head>
 <body>
 
-<!-- ===== SCHERMATA VIDEO INTRO ===== -->
-<div id="screen-video" class="screen-active" style="position:fixed; inset:0; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999;">
-  <video id="intro-video" autoplay muted playsinline style="width:100%; height:100%; object-fit:cover;">
-    <source src="intro.mp4" type="video/mp4">
-  </video>
-  <button onclick="skipIntro()" style="position:absolute; bottom:2.5rem; right:1.5rem; background:rgba(0,0,0,0.6); border:1px solid rgba(200,134,10,0.4); color:var(--oro); font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; padding:0.5rem 1rem; border-radius:2px; cursor:pointer;">
-    Salta ▶
-  </button>
-</div>
-
 <!-- ===== SCHERMATA HOME ===== -->
-<div id="screen-home" style="display:none;">
+<div id="screen-home" class="screen-active">
   <div class="corner-ornament tl"></div>
   <div class="corner-ornament tr"></div>
   <div class="corner-ornament bl"></div>
@@ -676,8 +652,7 @@
   <div class="stats-tabs">
     <button class="stats-tab active" onclick="showTab('task-force')">Task Force</button>
     <button class="stats-tab" onclick="showTab('antagonisti')">Antagonisti</button>
-    <button class="stats-tab" onclick="showTab('ambigui')">Deus</button>
-    <button class="stats-tab" onclick="showTab('vesper')">Vesper</button>
+    <button class="stats-tab" onclick="showTab('ambigui')">Vesper</button>
   </div>
 
   <div class="scroll-content">
@@ -1016,45 +991,8 @@
 
     </div><!-- fine tab-antagonisti -->
 
-    <!-- ===== TAB: DEUS ===== -->
-    <div id="tab-ambigui" class="tab-panel">
-
-      <!-- DEUS -->
-      <div class="personaggio-card" style="background:linear-gradient(135deg,rgba(61,40,0,0.7),rgba(20,12,0,0.9)); border-color:rgba(255,200,50,0.4);">
-        <img src="img-deus.png" class="personaggio-img" alt="Deus">
-        <div class="personaggio-nome" style="color:#ffd166;">Deus</div>
-        <div class="personaggio-ruolo">L'Arcano · Entità Suprema · Oltre ogni classificazione</div>
-        <div class="personaggio-desc">"Non è un personaggio che si incontra. È una presenza che si avverte. Quando parla, il silenzio intorno cambia consistenza."</div>
-        <div class="stat-row">
-          <div class="stat-nome">Essenza</div>
-          <div class="stat-barra-container"><div class="stat-barra" style="width:100%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
-          <div class="stat-valore" style="color:#ffd166">∞</div>
-        </div>
-        <div class="stat-row">
-          <div class="stat-nome">Potere</div>
-          <div class="stat-barra-container"><div class="stat-barra" style="width:100%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
-          <div class="stat-valore" style="color:#ffd166">∞</div>
-        </div>
-        <div class="stat-row">
-          <div class="stat-nome">Conoscenza</div>
-          <div class="stat-barra-container"><div class="stat-barra" style="width:100%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
-          <div class="stat-valore" style="color:#ffd166">∞</div>
-        </div>
-        <div class="stat-row">
-          <div class="stat-nome">Intervento Diretto</div>
-          <div class="stat-barra-container"><div class="stat-barra" style="width:10%; background:linear-gradient(to right,#7a5500,#ffd166);"></div></div>
-          <div class="stat-valore" style="color:#ffd166">1</div>
-        </div>
-        <div style="margin-top:1rem; padding:0.75rem; background:rgba(255,200,50,0.06); border:1px solid rgba(255,200,50,0.2); border-radius:3px;">
-          <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:#ffd166; letter-spacing:0.1em; margin-bottom:0.4rem;">NOTA</div>
-          <div style="font-size:0.8rem; color:var(--testo); font-style:italic; line-height:1.6;">Non agisce direttamente nel mondo dei Comuni. Le sue leggi vietano l'interferenza diretta — eppure ha scelto Gabriel. Il perché è ancora tutto da scoprire.</div>
-        </div>
-      </div>
-
-    </div><!-- fine tab-ambigui -->
-
     <!-- ===== TAB: VESPER ===== -->
-    <div id="tab-vesper" class="tab-panel">
+    <div id="tab-ambigui" class="tab-panel">
 
       <!-- VESPER -->
       <div class="personaggio-card ambiguo">
@@ -1099,9 +1037,9 @@
         </div>
       </div>
 
-    </div><!-- fine tab-vesper -->
+    </div><!-- fine tab-ambigui -->
 
-    </div><!-- fine scroll-content -->
+  </div><!-- fine scroll-content -->
 
   <div style="padding:1rem 1.5rem; border-top:1px solid rgba(200,134,10,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
     <button class="btn-secondary" onclick="showScreen('home')">
@@ -1142,20 +1080,20 @@
     <!-- Copyright Libro -->
     <div style="background:linear-gradient(135deg,rgba(61,34,0,0.5),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1.25rem; margin-bottom:1.25rem;">
       <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--oro); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Copyright</div>
-      <p style="font-size:0.85rem; color:var(--testo); line-height:1.7; margin-bottom:0.75rem;">© 2025 Gaetano Bertozzi Avanzini. Tutti i diritti riservati.</p>
+      <p style="font-size:0.85rem; color:var(--testo); line-height:1.7; margin-bottom:0.75rem;">© 2026 Gaetano Bertozzi Avanzini. Tutti i diritti riservati.</p>
       <p style="font-size:0.8rem; color:var(--seppia-chiaro); line-height:1.7; font-style:italic;">Nessuna parte di questa app, inclusi testi, personaggi, illustrazioni e contenuti, può essere riprodotta, distribuita o trasmessa in qualsiasi forma senza il previo consenso scritto dell'autore.</p>
     </div>
 
     <!-- Copyright App -->
     <div style="background:linear-gradient(135deg,rgba(61,34,0,0.5),rgba(26,14,0,0.8)); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1.25rem; margin-bottom:1.25rem;">
       <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--oro); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Copyright App</div>
-      <p style="font-size:0.85rem; color:var(--testo); line-height:1.7; margin-bottom:0.5rem;">© 2025 Gaetano Bertozzi Avanzini<br><em>Gabriel e Geus — App Companion Ufficiale</em></p>
+      <p style="font-size:0.85rem; color:var(--testo); line-height:1.7; margin-bottom:0.5rem;">© 2026 Gaetano Bertozzi Avanzini<br><em>Gabriel e Geus — App Companion Ufficiale</em></p>
       <p style="font-size:0.8rem; color:var(--seppia-chiaro); line-height:1.7; font-style:italic;">I personaggi, la storia, il sistema di gioco e tutti i contenuti originali sono proprietà esclusiva dell'autore. Qualsiasi utilizzo non autorizzato è vietato.</p>
     </div>
 
     <!-- Versione -->
     <div style="text-align:center; padding:1rem 0 0.5rem;">
-      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--seppia-chiaro); letter-spacing:0.15em;">VERSIONE 1.0 · 2025</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--seppia-chiaro); letter-spacing:0.15em;">VERSIONE 1.0 · 2026</div>
     </div>
 
   </div><!-- fine scroll-content -->
@@ -1201,7 +1139,7 @@
   <div style="flex:1; overflow-y:auto; padding:1.25rem; padding-bottom:5rem;">
 
     <!-- IMMAGINE SCENA -->
-    <img id="gioco-img" src="" class="scene-img" alt="scena" style="display:none !important;">
+    <img id="gioco-img" src="" class="scene-img" alt="scena" style="display:none;">
 
     <!-- DESCRIZIONE SCENA -->
     <div id="gioco-desc" class="narrazione" style="margin-bottom:1.5rem;"></div>
@@ -1275,45 +1213,6 @@
 
 <script>
   // ===== DATI SCENE =====
-  // ===== VIDEO INTRO =====
-  function skipIntro() {
-    document.getElementById('screen-video').style.display = 'none';
-    showScreen('home');
-  }
-
-  window.addEventListener('load', () => {
-    const video = document.getElementById('intro-video');
-    if (video) {
-      video.addEventListener('ended', skipIntro);
-      // Fallback se il video non parte
-      setTimeout(() => {
-        if (document.getElementById('screen-video').style.display !== 'none') {
-          skipIntro();
-        }
-      }, 8000);
-    }
-  });
-
-  // ===== PARTICELLE FIDUCIA =====
-  function spawnParticelle(deus, vesper, se) {
-    const emojis = [];
-    for (let i = 0; i < deus; i++) emojis.push({ e: '✦', c: '#4a90d9' });
-    for (let i = 0; i < vesper; i++) emojis.push({ e: '◈', c: '#9988dd' });
-    for (let i = 0; i < se; i++) emojis.push({ e: '★', c: '#f0b429' });
-    emojis.forEach((p, i) => {
-      setTimeout(() => {
-        const el = document.createElement('div');
-        el.className = 'particella';
-        el.textContent = p.e;
-        el.style.color = p.c;
-        el.style.left = (30 + Math.random() * 40) + '%';
-        el.style.top = (40 + Math.random() * 20) + '%';
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 1000);
-      }, i * 150);
-    });
-  }
-
   const scene = [
     {
       cap: 'Capitolo 2', titolo: "L'Incontro", img: 'scene-lago.png',
@@ -1514,6 +1413,11 @@
     document.getElementById('gioco-titolo').textContent = s.titolo;
     document.getElementById('gioco-desc').textContent = s.desc;
 
+    // Immagine
+    const img = document.getElementById('gioco-img');
+    if (s.img) { img.src = s.img; img.style.display = 'block'; }
+    else img.style.display = 'none';
+
     // Geus
     const geusEl = document.getElementById('gioco-geus');
     if (s.geus) { geusEl.textContent = s.geus; geusEl.style.display = 'block'; }
@@ -1557,7 +1461,6 @@
     stato.vesper += sc.vesper;
     stato.se += sc.se;
     aggiornaTracker();
-    if (sc.deus + sc.vesper + sc.se > 0) spawnParticelle(sc.deus, sc.vesper, sc.se);
     mostraEsito(sc.esito, sc.deus, sc.vesper, sc.se);
     document.getElementById('gioco-scelte').style.display = 'none';
   }
@@ -1579,13 +1482,13 @@
         document.getElementById('dado-display').textContent = risultato;
         document.getElementById('dado-risultato').textContent = risultato + ' su ' + max;
         document.getElementById('btn-lancia').disabled = true;
+        // Trova esito
         const esito = s.esiti.find(e => risultato >= e.min && risultato <= e.max);
         if (esito) {
           stato.deus += esito.deus;
           stato.vesper += esito.vesper;
           stato.se += esito.se;
           aggiornaTracker();
-          if (esito.deus + esito.vesper + esito.se > 0) spawnParticelle(esito.deus, esito.vesper, esito.se);
           setTimeout(() => mostraEsito(esito.testo, esito.deus, esito.vesper, esito.se), 500);
         }
       }
@@ -1611,18 +1514,7 @@
     if (stato.scenaCorrente >= scene.length) {
       mostraFinale();
     } else {
-      // Animazione transizione
-      const content = document.querySelector('#screen-gioco > div[style*="overflow-y"]');
-      if (content) {
-        content.style.opacity = '0';
-        content.style.transition = 'opacity 0.2s';
-        setTimeout(() => {
-          caricaScena(stato.scenaCorrente);
-          content.style.opacity = '1';
-        }, 200);
-      } else {
-        caricaScena(stato.scenaCorrente);
-      }
+      caricaScena(stato.scenaCorrente);
     }
   }
 

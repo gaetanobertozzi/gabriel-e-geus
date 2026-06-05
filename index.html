@@ -426,6 +426,83 @@
       border-top-color: rgba(80,60,140,0.2);
     }
 
+
+    /* ===== ATLANTE ===== */
+    .atlante-cat-btn {
+      padding: 0.4rem 0.75rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      background: transparent;
+      border: 1px solid rgba(80,60,140,0.4);
+      border-radius: 20px;
+      color: #9988dd;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .atlante-cat-btn.active {
+      background: rgba(80,60,140,0.3);
+      border-color: rgba(120,90,200,0.7);
+      color: #c8b8ff;
+    }
+    .atlante-card {
+      background: linear-gradient(135deg, rgba(30,20,60,0.7), rgba(10,5,25,0.9));
+      border: 1px solid rgba(80,60,140,0.35);
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .atlante-card:active {
+      border-color: rgba(140,100,255,0.6);
+      background: linear-gradient(135deg, rgba(50,30,90,0.7), rgba(20,10,45,0.9));
+    }
+    .atlante-card-titolo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: #c8b8ff;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .atlante-card-desc {
+      font-size: 0.88rem;
+      color: #b0a0d8;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .atlante-card-extra {
+      display: none;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(80,60,140,0.2);
+      font-size: 0.82rem;
+      color: var(--testo);
+      line-height: 1.65;
+    }
+    .atlante-cat-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: #7755cc;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(80,60,140,0.2);
+    }
+    .atlante-misteri-tag {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      color: #cc8800;
+      border: 1px solid rgba(200,100,0,0.3);
+      padding: 0.15rem 0.5rem;
+      border-radius: 10px;
+      letter-spacing: 0.1em;
+    }
+  
     /* ===== NAVIGAZIONE ===== */
     .nav-bar {
       position: fixed;
@@ -595,6 +672,12 @@
     </button>
     <button class="btn-secondary" onclick="showScreen('stats')">
       Schede Personaggi
+    </button>
+    <button class="btn-secondary" onclick="showScreen('atlante')" style="border-color:rgba(80,60,140,0.6); color:#9988dd;">
+      ✦ Atlante del Mondo
+    </button>
+    <button class="btn-secondary" onclick="window.open('https://www.amazon.it/dp/B0H42HZ562', '_blank')" style="border-color:rgba(200,134,10,0.5); color:var(--oro-chiaro); margin-top:0.25rem;">
+      ★ Lascia una Recensione su Amazon
     </button>
     <button class="btn-secondary" onclick="showScreen('info')" style="font-size:0.75rem; padding:0.5rem; opacity:0.6;">
       ℹ︎ Informazioni & Copyright
@@ -1088,6 +1171,36 @@
   </div>
 </div>
 
+
+<!-- ===== SCHERMATA ATLANTE ===== -->
+<div id="screen-atlante" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0a0510 0%,#130820 100%);">
+
+  <div class="screen-header" style="border-bottom-color:rgba(80,60,140,0.3);">
+    <div class="screen-header-title" style="color:#b8a0ff;">Atlante del Mondo</div>
+    <div class="screen-header-sub">Gabriel e Geus — Gli Inizi</div>
+  </div>
+
+  <!-- MENU CATEGORIE -->
+  <div id="atlante-menu" style="display:flex; flex-wrap:wrap; gap:0.5rem; padding:1rem 1.25rem 0.5rem; background:rgba(0,0,0,0.3); border-bottom:1px solid rgba(80,60,140,0.2);">
+    <button class="atlante-cat-btn active" onclick="mostraCategoria('mondi', this)">🌐 Mondi</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('luoghi', this)">📍 Luoghi</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('personaggi', this)">👤 Personaggi</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('oggetti', this)">🎒 Oggetti</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('magie', this)">✨ Magie</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('oscure', this)">🌑 Magie Oscure</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('capitoli', this)">📖 Capitoli</button>
+    <button class="atlante-cat-btn" onclick="mostraCategoria('misteri', this)">❓ Misteri</button>
+  </div>
+
+  <div id="atlante-content" class="scroll-content" style="padding-top:1rem;">
+    <!-- contenuto dinamico -->
+  </div>
+
+  <div style="padding:1rem 1.5rem; border-top:1px solid rgba(80,60,140,0.2); position:fixed; bottom:0; left:0; right:0; background:rgba(10,6,0,0.97);">
+    <button class="btn-secondary" onclick="showScreen('home')">← Torna alla Home</button>
+  </div>
+</div>
+
 <!-- ===== SCHERMATA INFO / COPYRIGHT ===== -->
 <div id="screen-info" style="display:none; flex-direction:column; min-height:100vh; background:linear-gradient(180deg,#0f0800 0%,#1a0e00 100%);">
 
@@ -1247,6 +1360,12 @@
       </div>
     </div>
     <button class="btn-primary" onclick="resetGioco()">↺ Ricomincia</button>
+    <div style="font-family:'EB Garamond',serif; font-size:0.9rem; color:var(--testo); font-style:italic; line-height:1.6; margin-top:1rem; padding:0 0.5rem;">
+      Se Gabriel e Geus ti ha coinvolto, anche 2-3 righe su Amazon fanno la differenza.
+    </div>
+    <button class="btn-primary" onclick="window.open('https://www.amazon.it/dp/B0H42HZ562', '_blank')" style="background:linear-gradient(135deg,#6b4500,#c8860a,#6b4500); margin-top:0.75rem;">
+      ★ Lascia una Recensione su Amazon
+    </button>
     <button class="btn-secondary" style="margin-top:0.75rem;" onclick="showScreen('home')">← Home</button>
   </div>
 </div>
@@ -1332,7 +1451,7 @@
       ]
     },
     {
-      cap: 'Capitolo 6', titolo: 'Primo Incontro con Vesper', img: 'scene-vesper.png',
+      cap: 'Capitolo 6', titolo: 'Primo Incontro con Vesper', img: 'img-vesper.png',
       desc: 'Un\'entità si manifesta davanti a voi. Non è un angelo, non è un demone. Si chiama Vesper. Come reagisci?',
       geus: 'Non è amico. Non è nemico. È qualcosa che non ha ancora deciso cosa essere.',
       tipo: 'scelta',
@@ -1354,7 +1473,7 @@
       ]
     },
     {
-      cap: 'Capitolo 7', titolo: 'Il Segreto di Geus', img: 'scene-lago.png',
+      cap: 'Capitolo 7', titolo: 'Il Segreto di Geus', img: 'img-geus.png',
       desc: 'Geus ti ha rivelato qualcosa di importante su di sé. Una vulnerabilità. Un limite che non immaginavi. Come reagisci a questa rivelazione?',
       geus: 'È uno dei pochissimi modi in cui posso morire. Te lo dico perché hai il diritto di sapere con chi stai.',
       tipo: 'scelta',
@@ -1365,7 +1484,7 @@
       ]
     },
     {
-      cap: 'Capitolo 8', titolo: 'Le Ipotesi del Traditore', img: 'scene-martirio.png',
+      cap: 'Capitolo 8', titolo: 'Le Ipotesi del Traditore', img: 'scene-traditore.png',
       desc: 'Tre ipotesi sul traditore sono sul tavolo. L\'Arcangelo Superiore, un Professore, un Angelo insospettabile. Chi sospetti?',
       geus: 'Tutti potrebbero essere colpevoli. Nessuno potrebbe esserlo. Questa è la parte che odio di più di questo mestiere.',
       tipo: 'scelta',
@@ -1410,7 +1529,7 @@
       ]
     },
     {
-      cap: 'Capitolo 11', titolo: 'La Piuma Grigia', img: 'scene-varco.png',
+      cap: 'Capitolo 11', titolo: 'La Piuma Grigia', img: 'scene-westminster.png',
       desc: 'Geus ha perso una piuma. È diventata grigia. La sua essenza si sta indebolendo. Gabriel lo scopre. Come reagisce?',
       geus: 'Non è niente. Continua.',
       tipo: 'scelta',
@@ -1549,7 +1668,7 @@
     setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
   }
 
-  // scenaSucessiva() è gestita dal sistema di salvataggio sotto
+
 
   function mostraFinale() {
     showScreen('finale');
@@ -1561,13 +1680,13 @@
     const max = Math.max(stato.deus, stato.vesper, stato.se);
     if (stato.deus === max) {
       titolo = 'Book 2B — La Via della Missione';
-      desc = 'La tua fiducia in Deus è stata la più forte. Gabriel continuerà la sua missione al fianco della Task Force ufficiale, seguendo il cammino della fede e del dovere. Il tuo Book 2 è: La Via della Missione.';
+      desc = 'La tua fiducia in Deus è stata la più forte. Gabriel e Geus continueranno la loro missione al fianco della Task Force ufficiale, seguendo il cammino della fede e del dovere. Il tuo Book 2 è: La Via della Missione.';
     } else if (stato.vesper === max) {
       titolo = 'Book 2A — La Via di Vesper';
-      desc = 'La tua fiducia in Vesper è stata la più forte. Gabriel seguirà Vesper verso Torino, alla ricerca di una verità che nessuno vuole ammettere. Il tuo Book 2 è: La Via di Vesper.';
+      desc = 'La tua fiducia in Vesper è stata la più forte. Gabriel e Geus seguiranno Vesper verso Torino, alla ricerca di una verità che nessuno vuole ammettere. Il tuo Book 2 è: La Via di Vesper.';
     } else {
       titolo = 'Book 2C — La Via dell\'Indipendenza';
-      desc = 'La tua fiducia in te stesso è stata la più forte. Gabriel formerà una Task Force autonoma, libera da vincoli e da lealtà imposte. Il tuo Book 2 è: La Via dell\'Indipendenza.';
+      desc = 'La tua fiducia in te stesso è stata la più forte. Gabriel e Geus formeranno una Task Force autonoma, libera da vincoli e da lealtà imposte. Il tuo Book 2 è: La Via dell\'Indipendenza.';
     }
     document.getElementById('finale-titolo').textContent = titolo;
     document.getElementById('finale-desc').textContent = desc;
@@ -1578,11 +1697,7 @@
     iniziaGioco();
   }
 
-  function iniziaGioco() {
-    showScreen('gioco');
-    caricaScena(0);
-  }
-
+  // ===== NAVIGAZIONE SCHERMATE =====
   function showScreen(name) {
     document.querySelectorAll('[id^="screen-"]').forEach(s => {
       s.style.display = 'none';
@@ -1593,6 +1708,9 @@
       target.style.display = 'flex';
       target.classList.add('screen-active');
       window.scrollTo(0, 0);
+    }
+    if (name === 'atlante') {
+      setTimeout(() => mostraCategoria(catCorrente, document.querySelector('.atlante-cat-btn.active')), 50);
     }
   }
 
@@ -1609,11 +1727,8 @@
   function salvaPartita() {
     try {
       localStorage.setItem(SAVE_KEY, JSON.stringify({
-        deus: stato.deus,
-        vesper: stato.vesper,
-        se: stato.se,
-        scenaCorrente: stato.scenaCorrente,
-        ts: Date.now()
+        deus: stato.deus, vesper: stato.vesper, se: stato.se,
+        scenaCorrente: stato.scenaCorrente, ts: Date.now()
       }));
     } catch(e) {}
   }
@@ -1650,21 +1765,23 @@
   }
 
   function mostraBannerRipristino() {
+    const old = document.getElementById('banner-ripristino');
+    if (old) old.remove();
     const banner = document.createElement('div');
     banner.id = 'banner-ripristino';
-    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,6,0,0.97);border-bottom:1px solid rgba(200,134,10,0.4);padding:1.25rem 1.5rem;text-align:center;animation:fadeIn 0.3s ease;';
-    banner.innerHTML = '<div style="font-family:Cinzel,serif;font-size:0.8rem;color:var(--oro-chiaro);letter-spacing:0.1em;margin-bottom:0.75rem;">✦ Partita salvata trovata — Scena ' + (stato.scenaCorrente + 1) + '/16 ✦</div>' +
+    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,6,0,0.97);border-bottom:1px solid rgba(200,134,10,0.4);padding:1.25rem 1.5rem;text-align:center;';
+    banner.innerHTML = '<div style="font-family:Cinzel,serif;font-size:0.8rem;color:#f0b429;letter-spacing:0.1em;margin-bottom:0.75rem;">Partita salvata — Scena ' + (stato.scenaCorrente + 1) + '/16</div>' +
       '<div style="display:flex;gap:0.75rem;justify-content:center;">' +
-      '<button class="btn-primary" style="max-width:160px;font-size:0.85rem;padding:0.65rem 1rem;" onclick="ripristinaPartita()">Riprendi</button>' +
-      '<button class="btn-secondary" style="max-width:160px;font-size:0.85rem;padding:0.65rem 1rem;" onclick="nuovaPartita()">Nuova Partita</button>' +
+      '<button class="btn-primary" style="max-width:150px;font-size:0.85rem;padding:0.65rem 1rem;" onclick="ripristinaPartita()">Riprendi</button>' +
+      '<button class="btn-secondary" style="max-width:150px;font-size:0.85rem;padding:0.65rem 1rem;" onclick="nuovaPartita()">Nuova Partita</button>' +
       '</div>';
     document.body.appendChild(banner);
+    caricaScena(stato.scenaCorrente);
   }
 
   function ripristinaPartita() {
     const b = document.getElementById('banner-ripristino');
     if (b) b.remove();
-    caricaScena(stato.scenaCorrente);
   }
 
   function nuovaPartita() {
@@ -1675,10 +1792,6 @@
     caricaScena(0);
   }
 
-  // Salva automaticamente dopo ogni scelta/dado
-  const _origScegli = scegli;
-  // Wrap scenaSucessiva per salvare
-  const _origScenaSucessiva = scenaSucessiva;
   function scenaSucessiva() {
     salvaPartita();
     stato.scenaCorrente++;
@@ -1689,6 +1802,121 @@
       caricaScena(stato.scenaCorrente);
     }
   }
+
+  // ===== ATLANTE =====
+  const atlante = {
+    mondi: [
+      { t: "Piani Superiori", d: "Regno di luce, ordine e potere celeste. Qui il destino prende forma." },
+      { t: "Mondo dei Comuni", d: "Il mondo umano, fragile e reale. E' qui che tutto puo' essere perduto o salvato." },
+      { t: "Piani Inferiori", d: "Regno dell'esilio e della corruzione. Da qui si allunga l'ombra di Golert." },
+      { t: "Crepa tra i Mondi", d: "Una ferita proibita nello spazio dei mondi. Da li' e' nato cio' che non doveva esistere." },
+    ],
+    luoghi: [
+      { t: "Stanza di Gabriel", d: "Il luogo dell'inizio. Qui l'ordinario incontra il meraviglioso." },
+      { t: "Dimora di Deus", d: "Cuore dei Piani Superiori. Qui una missione impossibile viene affidata a un ragazzo." },
+      { t: "Scuola dei Piani Superiori", d: "Luogo di studio, disciplina e trasformazione. Qui Gabriel comincia a diventare altro." },
+      { t: "Foresta Rossa", d: "Confine sorvegliato tra sicurezza e minaccia. Un luogo dove il silenzio non e' mai davvero pace." },
+      { t: "Passaggio nelle Nuvole", d: "Soglia sospesa tra i mondi. Ogni attraversamento e' una prova." },
+      { t: "Pub", d: "Luogo di reclutamento e corruzione. Qui il male non colpisce subito: prima convince." },
+      { t: "Vicolo", d: "Spazio del primo vero confronto. Qui Gabriel smette di fuggire e inizia a combattere." },
+      { t: "Parco", d: "Il conflitto esce dall'ombra. Il mondo umano diventa campo di battaglia." },
+    ],
+    personaggi: [
+      { t: "Gabriel", d: "Dodici anni, umano, prescelto. Il suo coraggio vale piu' della sua eta'." },
+      { t: "Geus", d: "Quasi angelo, guida e narratore. Ironia, istinto e lealta' dietro un sorriso tagliente." },
+      { t: "Deus", d: "Signore dei Piani Superiori. Affida a Gabriel il peso di due mondi." },
+      { t: "Crudelius", d: "Giovane agente del male. Manipola, seduce e colpisce senza pieta'." },
+      { t: "Golert", d: "Signore oscuro in fuga dagli Inferi. La sua ombra incombe su ogni scelta." },
+      { t: "Vesper", d: "Creatura della crepa. Non appartiene al bene ne' al male, ma al mistero." },
+      { t: "Spazioso", d: "Presenza fredda, precisa, indispensabile. Ordine e strategia nel caos della missione." },
+      { t: "Martirio", d: "Figura legata al sacrificio. Il suo destino pesa come una promessa oscura." },
+      { t: "Arcangelo Superiore", d: "Potere altissimo e conoscenza silenziosa. Forse sa piu' di quanto dica." },
+    ],
+    oggetti: [
+      { t: "Borsa Magica", d: "Oggetto vivo e fedele. Aiuta chi la rispetta e lo salva quando serve davvero." },
+      { t: "Lamineus", d: "Fascia antica di conoscenza. Riconosce il merito e risveglia nuovi poteri." },
+      { t: "Sveglia Magica", d: "Oggetto severo dei Piani Superiori. Qui anche il sonno ha conseguenze." },
+    ],
+    magie: [
+      { t: "Scudo", d: "Prima difesa di Gabriel. Una barriera fragile, ma decisiva." },
+      { t: "Senza Rancore", d: "Primo colpo reale. La magia dell'attacco nasce dall'istinto." },
+      { t: "Ti Saluto", d: "Incantesimo di confusione e inganno. A volte sparire vale piu' che colpire." },
+      { t: "Speculum", d: "Magia riflessa e superiore. Il colpo del nemico ritorna alla sua origine." },
+    ],
+    oscure: [
+      { t: "Maledizione del Torpore", d: "Nebbia che rallenta mente e corpo. Il pericolo piu' subdolo e' quello che spegne." },
+      { t: "Maledizione Mentale", d: "Corrompe pensiero e lucidita'. Il male entra dove la difesa e' piu' fragile." },
+      { t: "Maledizione del Ghiaccio", d: "Blocca il movimento e imprigiona le ali. Il freddo diventa arma." },
+      { t: "Maledizione della Seduzione", d: "Attira verso il male senza violenza apparente. La corruzione comincia spesso con una promessa." },
+      { t: "Maledizione Mortale", d: "La piu' estrema tra le magie oscure. Puo' spezzare anche la vita celeste." },
+    ],
+    capitoli: [
+      { t: "Cap. 1 — I Due Universi", d: "Due mondi vengono rivelati. E nulla e' piu' semplice da quel momento." },
+      { t: "Cap. 2 — L'Incontro", d: "Gabriel incontra Geus e Deus. La chiamata diventa scelta." },
+      { t: "Cap. 3 — L'Addestramento", d: "Studio, magia, disciplina, rivelazioni. L'eroe inizia a formarsi." },
+      { t: "Cap. 4 — Il Passaggio nelle Nuvole", d: "La soglia tra i mondi si fa pericolosa. Attraversare significa rischiare." },
+      { t: "Cap. 5 — Il Ritorno nel Mondo dei Comuni", d: "Il male prende un volto. Gabriel affronta il suo primo vero nemico." },
+      { t: "Cap. 6 — L'Ombra Dietro Crudelius", d: "Dietro il nemico visibile si nasconde altro. Piu' antico. Piu' oscuro." },
+      { t: "Cap. 7 — L'Anomalia e le Crepe", d: "Il mistero si allarga. Il tradimento potrebbe non essere finito." },
+      { t: "Cap. 8 — Rivelazioni", d: "La verita' cambia il peso della missione. Niente resta uguale dopo aver capito." },
+      { t: "Cap. 9 — Nuovi Interrogativi", d: "Ogni risposta apre un'altra crepa. Il dubbio cresce insieme al pericolo." },
+      { t: "Cap. 10 — Il Primo Vero Combattimento", d: "Gabriel entra davvero nella guerra. La teoria si spezza contro la realta'." },
+      { t: "Cap. 11 — Cicatrici", d: "Le ferite non sono solo sul corpo. Anche l'anima impara a portare segni." },
+      { t: "Cap. 12 — Lo Scontro Finale", d: "Il primo arco si chiude. Ma la vera guerra e' appena iniziata." },
+    ],
+    misteri: [
+      { t: "Chi ha aiutato Golert?", d: "Chi lo ha aiutato a fuggire? Il male non ha agito da solo.", m: true },
+      { t: "Chi e' davvero Vesper?", d: "Un alleato del caos o il suo testimone? La sua natura sfugge a ogni classificazione.", m: true },
+      { t: "Dov'e' la Crepa?", d: "Dove si trova? E cosa accadrebbe se si aprisse ancora?", m: true },
+      { t: "Chi e' il Traditore?", d: "Chi ha spezzato la fiducia dei Piani Superiori? La minaccia potrebbe essere interna.", m: true },
+      { t: "Il Vero Potenziale di Gabriel", d: "Quanto e' grande? Il Libro I ne mostra solo l'inizio.", m: true },
+    ],
+  };
+
+  const catLabels = {
+    mondi: "Mondi", luoghi: "Luoghi", personaggi: "Personaggi",
+    oggetti: "Oggetti", magie: "Magie", oscure: "Magie Oscure",
+    capitoli: "Capitoli", misteri: "Misteri"
+  };
+
+  let catCorrente = "mondi";
+
+  function mostraCategoria(cat, btnEl) {
+    catCorrente = cat;
+    document.querySelectorAll(".atlante-cat-btn").forEach(function(b) { b.classList.remove("active"); });
+    if (btnEl) btnEl.classList.add("active");
+    const container = document.getElementById("atlante-content");
+    if (!container) return;
+    const voci = atlante[cat];
+    let html = "<div class='atlante-cat-label'>" + catLabels[cat] + "</div>";
+    voci.forEach(function(v) {
+      const parti = v.d.split('. ');
+      const riga1 = parti[0] + (parti.length > 1 ? '.' : '');
+      const riga2 = parti.slice(1).join('. ');
+      html += "<div class='atlante-card' onclick='toggleAtlanteCard(this)'>" +
+        "<div style='display:flex;justify-content:space-between;align-items:center;'>" +
+        "<div class='atlante-card-titolo'>" + v.t + "</div>" +
+        "<div class='atlante-arrow' style='font-size:0.7rem;color:#7755cc;transition:transform 0.2s;'>▼</div>" +
+        "</div>" +
+        "<div class='atlante-card-desc' style='margin-top:0.35rem;'>" + riga1 + "</div>" +
+        "<div class='atlante-card-extra' style='display:none;margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(80,60,140,0.2);font-size:0.85rem;color:#c8b8ff;font-style:italic;line-height:1.6;'>" + riga2 + "</div>" +
+        (v.m ? "<div class='atlante-misteri-tag' style='margin-top:0.5rem;display:inline-block;'>NON RISOLTO</div>" : "") +
+        "</div>";
+    });
+    container.innerHTML = html;
+    container.scrollTop = 0;
+  }
+
+  function toggleAtlanteCard(el) {
+    el.classList.toggle("atlante-card-aperta");
+    const extra = el.querySelector(".atlante-card-extra");
+    const arrow = el.querySelector(".atlante-arrow");
+    const aperta = el.classList.contains("atlante-card-aperta");
+    if (extra) extra.style.display = aperta ? "block" : "none";
+    if (arrow) arrow.style.transform = aperta ? "rotate(180deg)" : "rotate(0deg)";
+    el.style.borderColor = aperta ? "rgba(140,100,255,0.6)" : "rgba(80,60,140,0.35)";
+  }
+
 </script>
 
 </body>

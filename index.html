@@ -1408,6 +1408,17 @@
       ]
     },
     {
+      cap: 'Capitolo 2', titolo: "L'Udienza con Deus", img: 'img-deus.png',
+      desc: 'Sei al cospetto di Deus — il Signore dei Piani Superiori. La sua voce riempie lo spazio intorno a te. «Ripongo in te tante speranze, Gabriel. Avrai un compito arduo e non ti saranno risparmiate fatiche e pericoli mortali. La tua missione è vitale per entrambi i mondi. Allora Gabriel, cosa vuoi fare?»',
+      geus: 'Guardavo Gabriel e guardavo Deus e pensavo a quanto fosse strana questa scena: il signore di tutti i Piani Superiori di fronte a un ragazzino in pigiama. E il ragazzino non stava scappando. Stava pensando. Iniziava a starmi simpatico, ma non ditegli niente.',
+      tipo: 'scelta',
+      scelte: [
+        { testo: '«Sì. Accetto la missione.»', esito: 'Gli occhi di Deus si illuminano. Gabriel annuisce con una certezza che sorprende persino Geus. La missione ha inizio.', deus: 2, vesper: 0, se: 0 },
+        { testo: "Ho una domanda: c'e' qualcun altro che puo' farlo?", esito: "Deus risponde: Non abbiamo trovato nessun altro in grado di farlo. Gabriel sente quelle parole atterrare come qualcosa di fisico. Poi dice si.", deus: 1, vesper: 0, se: 1 },
+        { testo: '«Accetto, ma voglio capire i rischi.»', esito: '«Rischierai la vita in ogni momento» dice Deus. Gabriel non scappa. Annuisce. È già più coraggioso di quanto sappia.', deus: 1, vesper: 0, se: 1 },
+      ]
+    },
+    {
       cap: 'Capitolo 3', titolo: 'Il Lago Ghiacciato', img: 'scene-lago.png',
       desc: 'La sveglia magica ti ha catapultato nel lago ghiacciato. L\'acqua è gelida. Geus ti osserva dalla riva con un sorriso che non promette niente di buono.',
       geus: 'Tecnicamente questo è il tuo primo test. Tecnicamente. In realtà volevo solo vedere come reagivi. Spoiler: non male.',
@@ -1645,6 +1656,7 @@
     aggiornaTracker();
     mostraEsito(sc.esito, sc.deus, sc.vesper, sc.se);
     document.getElementById('gioco-scelte').style.display = 'none';
+    salvaPartita();
   }
 
   function lanciaDado() {
@@ -1671,7 +1683,10 @@
           stato.vesper += esito.vesper;
           stato.se += esito.se;
           aggiornaTracker();
-          setTimeout(() => mostraEsito(esito.testo, esito.deus, esito.vesper, esito.se), 500);
+          setTimeout(() => {
+            mostraEsito(esito.testo, esito.deus, esito.vesper, esito.se);
+            salvaPartita();
+          }, 500);
         }
       }
     }, 80);

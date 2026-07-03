@@ -503,6 +503,41 @@
       letter-spacing: 0.1em;
     }
   
+
+    /* ===== PANNELLO STATISTICHE =====  */
+    .sp-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .sp-nome {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      color: var(--testo);
+      width: 75px;
+      flex-shrink: 0;
+    }
+    .sp-barra {
+      flex: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .sp-barra-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+    .sp-val {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--oro);
+      width: 18px;
+      text-align: right;
+    }
+
     /* ===== NAVIGAZIONE ===== */
     .nav-bar {
       position: fixed;
@@ -823,10 +858,21 @@
           <div class="stat-barra-container"><div class="stat-barra verde" style="width:90%"></div></div>
           <div class="stat-valore" style="color:#8f8">9</div>
         </div>
+        <div class="sezione-label">FIDUCIA</div>
         <div class="stat-row">
-          <div class="stat-nome">Fid. in Gabriel</div>
+          <div class="stat-nome">→ in Gabriel</div>
           <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:40%"></div></div>
           <div class="stat-valore" style="color:#4a90d9">4</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">→ in Deus</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:70%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">7</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-nome">→ in Vesper</div>
+          <div class="stat-barra-container"><div class="stat-barra fiducia" style="width:20%"></div></div>
+          <div class="stat-valore" style="color:#4a90d9">2</div>
         </div>
       </div>
 
@@ -1291,24 +1337,65 @@
 
   <!-- TRACKER FIDUCIA -->
   <div style="padding:0.75rem 1.25rem; background:rgba(0,0,0,0.3); border-bottom:1px solid rgba(200,134,10,0.15);">
-    <div style="font-family:'Cinzel',serif; font-size:0.6rem; color:var(--oro); letter-spacing:0.15em; margin-bottom:0.5rem;">FIDUCIA</div>
-    <div style="display:flex; gap:0.5rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+      <div style="font-family:'Cinzel',serif; font-size:0.6rem; color:var(--oro); letter-spacing:0.15em;">FIDUCIA</div>
+      <button onclick="toggleStatPanel()" style="font-family:'Cinzel',serif; font-size:0.55rem; color:#9988dd; background:transparent; border:1px solid rgba(80,60,140,0.4); border-radius:10px; padding:0.15rem 0.5rem; cursor:pointer;">⚡ Statistiche</button>
+    </div>
+    <div style="display:flex; gap:0.4rem;">
       <div style="flex:1; text-align:center;">
-        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">DEUS</div>
-        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:#4a90d9;" id="tracker-deus">0</div>
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:var(--seppia-chiaro); margin-bottom:0.2rem;">DEUS</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:#4a90d9;" id="tracker-deus">0</div>
       </div>
       <div style="flex:1; text-align:center;">
-        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">VESPER</div>
-        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:#9988dd;" id="tracker-vesper">0</div>
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:var(--seppia-chiaro); margin-bottom:0.2rem;">VESPER</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:#9988dd;" id="tracker-vesper">0</div>
       </div>
       <div style="flex:1; text-align:center;">
-        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">SE STESSO</div>
-        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:var(--oro-chiaro);" id="tracker-se">0</div>
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:var(--seppia-chiaro); margin-bottom:0.2rem;">SE STESSO</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:var(--oro-chiaro);" id="tracker-se">0</div>
       </div>
       <div style="flex:1; text-align:center;">
-        <div style="font-family:'Cinzel',serif; font-size:0.55rem; color:var(--seppia-chiaro); margin-bottom:0.25rem;">SCENA</div>
-        <div style="font-family:'Cinzel',serif; font-size:1.1rem; color:var(--testo);" id="tracker-scena">1/16</div>
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:var(--seppia-chiaro); margin-bottom:0.2rem;">SCENA</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:var(--testo);" id="tracker-scena">1/17</div>
       </div>
+    </div>
+    <div style="display:flex; gap:0.4rem; margin-top:0.4rem; padding-top:0.4rem; border-top:1px solid rgba(200,134,10,0.1);">
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:#cc8800; margin-bottom:0.2rem;">⚡ GAB</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:#cc8800;" id="mini-gab-energia">5</div>
+      </div>
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:#8fc88a; margin-bottom:0.2rem;">🪶 GEUS</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:#8fc88a;" id="mini-geus-piume">9</div>
+      </div>
+      <div style="flex:1; text-align:center;">
+        <div style="font-family:'Cinzel',serif; font-size:0.5rem; color:#9988dd; margin-bottom:0.2rem;">👁 VESPER</div>
+        <div style="font-family:'Cinzel',serif; font-size:1rem; color:#9988dd;" id="mini-vesper-imp">9</div>
+      </div>
+      <div style="flex:1; text-align:center; opacity:0;"><div style="font-size:1rem;">-</div></div>
+    </div>
+
+    <!-- PANNELLO STATISTICHE COMPLETO -->
+    <div id="stat-panel" style="display:none; margin-top:0.75rem; padding:0.75rem; background:rgba(0,0,0,0.4); border:1px solid rgba(80,60,140,0.3); border-radius:4px;">
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:var(--oro); letter-spacing:0.1em; margin-bottom:0.6rem;">GABRIEL</div>
+      <div id="sp-gab-energia" class="sp-row"><span class="sp-nome">Energia</span><div class="sp-barra"><div class="sp-barra-fill" style="width:50%; background:linear-gradient(to right,#6b3d00,#cc8800);"></div></div><span class="sp-val">5</span></div>
+      <div id="sp-gab-fisica" class="sp-row"><span class="sp-nome">F. Fisica</span><div class="sp-barra"><div class="sp-barra-fill" style="width:40%; background:linear-gradient(to right,#6b3d00,#cc8800);"></div></div><span class="sp-val">4</span></div>
+      <div id="sp-gab-res" class="sp-row"><span class="sp-nome">Resistenza</span><div class="sp-barra"><div class="sp-barra-fill" style="width:40%; background:linear-gradient(to right,#6b3d00,#cc8800);"></div></div><span class="sp-val">4</span></div>
+      <div id="sp-gab-magia" class="sp-row"><span class="sp-nome">F. Magica</span><div class="sp-barra"><div class="sp-barra-fill" style="width:50%; background:linear-gradient(to right,#1a3a6b,#4a90d9);"></div></div><span class="sp-val">5</span></div>
+      <div id="sp-gab-resmagia" class="sp-row"><span class="sp-nome">Res. Magica</span><div class="sp-barra"><div class="sp-barra-fill" style="width:40%; background:linear-gradient(to right,#1a3a6b,#4a90d9);"></div></div><span class="sp-val">4</span></div>
+      <div id="sp-gab-istinto" class="sp-row"><span class="sp-nome">Istinto</span><div class="sp-barra"><div class="sp-barra-fill" style="width:50%; background:linear-gradient(to right,#1a3a6b,#4a90d9);"></div></div><span class="sp-val">5</span></div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:#8fc88a; letter-spacing:0.1em; margin:0.6rem 0 0.4rem;">GEUS</div>
+      <div id="sp-geus-essenza" class="sp-row"><span class="sp-nome">Essenza</span><div class="sp-barra"><div class="sp-barra-fill" style="width:80%; background:linear-gradient(to right,#0a2a0a,#2a8b2a);"></div></div><span class="sp-val">8</span></div>
+      <div id="sp-geus-magia" class="sp-row"><span class="sp-nome">F. Magica</span><div class="sp-barra"><div class="sp-barra-fill" style="width:70%; background:linear-gradient(to right,#0a2a0a,#2a8b2a);"></div></div><span class="sp-val">7</span></div>
+      <div id="sp-geus-resmagia" class="sp-row"><span class="sp-nome">Res. Magica</span><div class="sp-barra"><div class="sp-barra-fill" style="width:70%; background:linear-gradient(to right,#0a2a0a,#2a8b2a);"></div></div><span class="sp-val">7</span></div>
+      <div id="sp-geus-controllo" class="sp-row"><span class="sp-nome">Controllo</span><div class="sp-barra"><div class="sp-barra-fill" style="width:90%; background:linear-gradient(to right,#0a2a0a,#2a8b2a);"></div></div><span class="sp-val">9</span></div>
+      <div id="sp-geus-piume" class="sp-row"><span class="sp-nome">Piume</span><div class="sp-barra"><div class="sp-barra-fill" style="width:90%; background:linear-gradient(to right,#0a2a0a,#2a8b2a);"></div></div><span class="sp-val">9</span></div>
+      <div id="sp-geus-fiducia" class="sp-row"><span class="sp-nome">Fid. Gabriel</span><div class="sp-barra"><div class="sp-barra-fill" style="width:40%; background:linear-gradient(to right,#1a3a6b,#4a90d9);"></div></div><span class="sp-val">4</span></div>
+      <div id="sp-geus-fidDeus" class="sp-row"><span class="sp-nome">Fid. Deus</span><div class="sp-barra"><div class="sp-barra-fill" style="width:70%; background:linear-gradient(to right,#1a3a6b,#4a90d9);"></div></div><span class="sp-val">7</span></div>
+      <div id="sp-geus-fidVesper" class="sp-row"><span class="sp-nome">Fid. Vesper</span><div class="sp-barra"><div class="sp-barra-fill" style="width:20%; background:linear-gradient(to right,#2a1050,#7744cc);"></div></div><span class="sp-val">2</span></div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; color:#9988dd; letter-spacing:0.1em; margin:0.6rem 0 0.4rem;">VESPER</div>
+      <div class="sp-row"><span class="sp-nome">Imprevedib.</span><div class="sp-barra"><div class="sp-barra-fill" style="width:90%; background:linear-gradient(to right,#2a1050,#7744cc);"></div></div><span class="sp-val" id="mini-vesper-imp2">9</span></div>
+      <div class="sp-row" style="opacity:0.5;"><span class="sp-nome">Altre stat.</span><div class="sp-barra"><div class="sp-barra-fill" style="width:50%; background:rgba(80,60,140,0.3);"></div></div><span class="sp-val">?</span></div>
     </div>
   </div>
 
@@ -1382,6 +1469,7 @@
         </div>
       </div>
     </div>
+    <div id="finale-statistiche" style="background:rgba(61,34,0,0.4); border:1px solid rgba(200,134,10,0.2); border-radius:4px; padding:1rem; margin-bottom:1rem; width:100%; max-width:400px;"></div>
     <button class="btn-primary" onclick="resetGioco()">↺ Ricomincia</button>
     <div style="font-family:'EB Garamond',serif; font-size:0.9rem; color:var(--testo); font-style:italic; line-height:1.6; margin-top:1rem; padding:0 0.5rem;">
       Se Gabriel e Geus ti ha coinvolto, anche 2-3 righe su Amazon fanno la differenza.
@@ -1588,7 +1676,112 @@
   ];
 
   // ===== STATO GIOCO =====
-  let stato = { deus: 0, vesper: 0, se: 0, scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0 };
+  let stato = {
+    deus: 0, vesper: 0, se: 0,
+    scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0,
+    // Statistiche dinamiche Gabriel
+    gab: { energia: 5, forzaFisica: 4, resistenza: 4, forzaMagica: 5, resMagica: 4, istinto: 5 },
+    // Statistiche dinamiche Geus
+    geus: { essenza: 8, forzaMagica: 7, resMagica: 7, controllo: 9, piume: 9, fiducia: 4, fiduciaDeus: 7, fiduciaVesper: 2 },
+    // Vesper - solo imprevedibilita dinamica
+    vesper_imp: 9
+  };
+
+
+  // ===== STATISTICHE DINAMICHE =====
+  function aggiornaStat(tipo, dadoRisultato, dadoMax) {
+    const ratio = dadoRisultato / dadoMax;
+    if (tipo === 'combattimento') {
+      if (ratio >= 0.8) { // successo pieno
+        stato.gab.forzaMagica = Math.min(10, stato.gab.forzaMagica + 1);
+        stato.gab.energia = Math.min(10, stato.gab.energia + 1);
+        stato.geus.controllo = Math.min(10, stato.geus.controllo + 1);
+      } else if (ratio >= 0.4) { // successo parziale
+        stato.gab.resistenza = Math.min(10, stato.gab.resistenza + 1);
+      } else { // fallimento
+        stato.gab.energia = Math.max(1, stato.gab.energia - 1);
+        stato.geus.piume = Math.max(1, stato.geus.piume - 1);
+        stato.geus.essenza = Math.max(1, stato.geus.essenza - 1);
+      }
+    } else if (tipo === 'fisico') {
+      if (ratio >= 0.8) {
+        stato.gab.forzaFisica = Math.min(10, stato.gab.forzaFisica + 1);
+        stato.gab.resistenza = Math.min(10, stato.gab.resistenza + 1);
+      } else if (ratio < 0.4) {
+        stato.gab.energia = Math.max(1, stato.gab.energia - 1);
+      }
+    } else if (tipo === 'fiducia') {
+      if (ratio >= 0.5) {
+        stato.geus.fiducia = Math.min(10, stato.geus.fiducia + 1);
+      } else {
+        stato.gab.istinto = Math.max(1, stato.gab.istinto - 1);
+      }
+    }
+    // Vesper imprevedibilita cambia casualmente
+    stato.vesper_imp = Math.max(1, Math.min(10, stato.vesper_imp + (Math.random() > 0.5 ? 1 : -1)));
+    aggiornaStatDisplay();
+  }
+
+  function aggiornaStatScelta(tipo) {
+    if (tipo === 'coraggioso') {
+      stato.gab.istinto = Math.min(10, stato.gab.istinto + 1);
+    } else if (tipo === 'prudente') {
+      stato.gab.resMagica = Math.min(10, stato.gab.resMagica + 1);
+      stato.geus.fiducia = Math.min(10, stato.geus.fiducia + 1);
+    } else if (tipo === 'autonomo') {
+      stato.gab.istinto = Math.min(10, stato.gab.istinto + 1);
+      stato.gab.forzaMagica = Math.min(10, stato.gab.forzaMagica + 1);
+    }
+    aggiornaStatDisplay();
+  }
+
+  function aggiornaStatDisplay() {
+    // Aggiorna mini tracker
+    document.getElementById('mini-gab-energia').textContent = stato.gab.energia;
+    document.getElementById('mini-geus-piume').textContent = stato.geus.piume;
+    document.getElementById('mini-vesper-imp').textContent = stato.vesper_imp;
+    // Aggiorna pannello completo se aperto
+    aggiornaStatPanel();
+  }
+
+  function aggiornaStatPanel() {
+    const p = document.getElementById('stat-panel');
+    if (!p || p.style.display === 'none') return;
+    // Gabriel
+    aggiornaBarraPanel('sp-gab-energia', stato.gab.energia);
+    aggiornaBarraPanel('sp-gab-fisica', stato.gab.forzaFisica);
+    aggiornaBarraPanel('sp-gab-res', stato.gab.resistenza);
+    aggiornaBarraPanel('sp-gab-magia', stato.gab.forzaMagica);
+    aggiornaBarraPanel('sp-gab-resmagia', stato.gab.resMagica);
+    aggiornaBarraPanel('sp-gab-istinto', stato.gab.istinto);
+    // Geus
+    aggiornaBarraPanel('sp-geus-essenza', stato.geus.essenza);
+    aggiornaBarraPanel('sp-geus-magia', stato.geus.forzaMagica);
+    aggiornaBarraPanel('sp-geus-resmagia', stato.geus.resMagica);
+    aggiornaBarraPanel('sp-geus-controllo', stato.geus.controllo);
+    aggiornaBarraPanel('sp-geus-piume', stato.geus.piume);
+    aggiornaBarraPanel('sp-geus-fiducia', stato.geus.fiducia);
+    aggiornaBarraPanel('sp-geus-fidDeus', stato.geus.fiduciaDeus);
+    aggiornaBarraPanel('sp-geus-fidVesper', stato.geus.fiduciaVesper);
+  }
+
+  function aggiornaBarraPanel(id, val) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.querySelector('.sp-barra-fill').style.width = (val * 10) + '%';
+      el.querySelector('.sp-val').textContent = val;
+    }
+  }
+
+  function toggleStatPanel() {
+    const p = document.getElementById('stat-panel');
+    if (p.style.display === 'none') {
+      p.style.display = 'block';
+      aggiornaStatPanel();
+    } else {
+      p.style.display = 'none';
+    }
+  }
 
   function aggiornaTracker() {
     document.getElementById('tracker-deus').textContent = stato.deus;
@@ -1654,6 +1847,15 @@
     stato.vesper += sc.vesper;
     stato.se += sc.se;
     aggiornaTracker();
+    // Determina tipo scelta per statistiche
+    const tipoScelta = sc.se > 0 ? 'autonomo' : sc.deus > sc.vesper ? 'prudente' : 'coraggioso';
+    aggiornaStatScelta(tipoScelta);
+    // Primo Incontro con Vesper - cresce il dubbio su Deus, sia in Gabriel che in Geus
+    if (s.titolo === 'Primo Incontro con Vesper' && sc.vesper > 0) {
+      stato.geus.fiduciaVesper = Math.min(10, stato.geus.fiduciaVesper + sc.vesper);
+      stato.geus.fiduciaDeus = Math.max(1, stato.geus.fiduciaDeus - 1);
+      aggiornaStatDisplay();
+    }
     mostraEsito(sc.esito, sc.deus, sc.vesper, sc.se);
     document.getElementById('gioco-scelte').style.display = 'none';
     salvaPartita();
@@ -1683,6 +1885,15 @@
           stato.vesper += esito.vesper;
           stato.se += esito.se;
           aggiornaTracker();
+          // Determina tipo scena per statistiche
+          const tipoStat = s.dado === 20 ? 'combattimento' : s.dado === 10 ? 'combattimento' : 'fisico';
+          aggiornaStat(tipoStat, risultato, max);
+          // Scontro Finale con Vesper - cresce il dubbio su Deus, sia in Gabriel che in Geus
+          if (s.titolo === 'Scontro Finale con Vesper' && esito.vesper > 0) {
+            stato.geus.fiduciaVesper = Math.min(10, stato.geus.fiduciaVesper + esito.vesper);
+            stato.geus.fiduciaDeus = Math.max(1, stato.geus.fiduciaDeus - 1);
+            aggiornaStatDisplay();
+          }
           setTimeout(() => {
             mostraEsito(esito.testo, esito.deus, esito.vesper, esito.se);
             salvaPartita();
@@ -1713,25 +1924,59 @@
     document.getElementById('finale-deus').textContent = stato.deus;
     document.getElementById('finale-vesper').textContent = stato.vesper;
     document.getElementById('finale-se').textContent = stato.se;
+    // Mostra statistiche finali
+    const statFinDiv = document.getElementById('finale-statistiche');
+    if (statFinDiv) {
+      statFinDiv.innerHTML =
+        '<div style="font-family:Cinzel,serif;font-size:0.65rem;color:var(--oro);letter-spacing:0.15em;margin-bottom:0.75rem;">STATISTICHE FINALI</div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;font-size:0.8rem;">' +
+        '<div style="color:#cc8800;">⚡ Gabriel: ' + stato.gab.energia + '/10</div>' +
+        '<div style="color:#8fc88a;">🪶 Geus: ' + stato.geus.piume + '/9</div>' +
+        '<div style="color:#4a90d9;">Magia Gab: ' + stato.gab.forzaMagica + '/10</div>' +
+        '<div style="color:#2a8b2a;">Essenza: ' + stato.geus.essenza + '/10</div>' +
+        '<div style="color:#cc8800;">Istinto: ' + stato.gab.istinto + '/10</div>' +
+        '<div style="color:#2a8b2a;">Controllo: ' + stato.geus.controllo + '/10</div>' +
+        '</div>' +
+        '<div style="font-size:0.75rem;color:var(--seppia-chiaro);font-style:italic;margin-top:0.5rem;">Ricorda questi valori — ripartirai da qui nel Libro 2.</div>';
+    }
 
     let titolo, desc;
-    const max = Math.max(stato.deus, stato.vesper, stato.se);
-    if (stato.deus === max) {
+    // Routing basato sulla MEDIA tra Fiducia di Gabriel e Fiducia di Geus
+    // Gabriel: stato.deus, stato.vesper, stato.se (accumulo libero, scala variabile)
+    // Geus: stato.geus.fiduciaDeus, stato.geus.fiduciaVesper (scala 1-10), fiducia (in se' tramite Gabriel non esiste un "se stesso" per Geus
+    // quindi per "Se Stesso" usiamo solo Gabriel, per Deus/Vesper facciamo la media normalizzata
+    const gabMax = Math.max(stato.deus, stato.vesper, stato.se, 1);
+    const gabDeusNorm = (stato.deus / gabMax) * 10;
+    const gabVesperNorm = (stato.vesper / gabMax) * 10;
+    const gabSeNorm = (stato.se / gabMax) * 10;
+
+    const mediaDeus = (gabDeusNorm + stato.geus.fiduciaDeus) / 2;
+    const mediaVesper = (gabVesperNorm + stato.geus.fiduciaVesper) / 2;
+    const mediaSe = gabSeNorm; // Geus non ha un valore "Se Stesso" proprio
+
+    const max = Math.max(mediaDeus, mediaVesper, mediaSe);
+    if (mediaDeus === max) {
       titolo = 'Book 2B — La Via della Missione';
-      desc = 'La tua fiducia in Deus è stata la più forte. Gabriel e Geus continueranno la loro missione al fianco della Task Force ufficiale, seguendo il cammino della fede e del dovere. Il tuo Book 2 è: La Via della Missione.';
-    } else if (stato.vesper === max) {
+      desc = 'La fiducia condivisa in Deus è stata la più forte. Gabriel e Geus continueranno la loro missione al fianco della Task Force ufficiale, seguendo il cammino della fede e del dovere. Il tuo Book 2 è: La Via della Missione.';
+    } else if (mediaVesper === max) {
       titolo = 'Book 2A — La Via di Vesper';
-      desc = 'La tua fiducia in Vesper è stata la più forte. Gabriel e Geus seguiranno Vesper verso Torino, alla ricerca di una verità che nessuno vuole ammettere. Il tuo Book 2 è: La Via di Vesper.';
+      desc = 'La fiducia condivisa in Vesper è stata la più forte. Gabriel e Geus seguiranno Vesper verso Torino, alla ricerca di una verità che nessuno vuole ammettere. Il tuo Book 2 è: La Via di Vesper.';
     } else {
       titolo = 'Book 2C — La Via dell\'Indipendenza';
-      desc = 'La tua fiducia in te stesso è stata la più forte. Gabriel e Geus formeranno una Task Force autonoma, libera da vincoli e da lealtà imposte. Il tuo Book 2 è: La Via dell\'Indipendenza.';
+      desc = 'La fiducia in te stesso è stata la più forte. Gabriel e Geus formeranno una Task Force autonoma, libera da vincoli e da lealtà imposte. Il tuo Book 2 è: La Via dell\'Indipendenza.';
     }
     document.getElementById('finale-titolo').textContent = titolo;
     document.getElementById('finale-desc').textContent = desc;
   }
 
   function resetGioco() {
-    stato = { deus: 0, vesper: 0, se: 0, scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0 };
+    stato = {
+      deus: 0, vesper: 0, se: 0,
+      scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0,
+      gab: { energia: 5, forzaFisica: 4, resistenza: 4, forzaMagica: 5, resMagica: 4, istinto: 5 },
+      geus: { essenza: 8, forzaMagica: 7, resMagica: 7, controllo: 9, piume: 9, fiducia: 4, fiduciaDeus: 7, fiduciaVesper: 2 },
+      vesper_imp: 9
+    };
     iniziaGioco();
   }
 
@@ -1766,7 +2011,8 @@
     try {
       localStorage.setItem(SAVE_KEY, JSON.stringify({
         deus: stato.deus, vesper: stato.vesper, se: stato.se,
-        scenaCorrente: stato.scenaCorrente, ts: Date.now()
+        scenaCorrente: stato.scenaCorrente, ts: Date.now(),
+        gab: stato.gab, geus: stato.geus, vesper_imp: stato.vesper_imp
       }));
     } catch(e) {}
   }
@@ -1781,6 +2027,9 @@
         stato.vesper = saved.vesper || 0;
         stato.se = saved.se || 0;
         stato.scenaCorrente = saved.scenaCorrente;
+        if (saved.gab) stato.gab = saved.gab;
+        if (saved.geus) stato.geus = saved.geus;
+        if (saved.vesper_imp) stato.vesper_imp = saved.vesper_imp;
         return true;
       }
     } catch(e) {}
@@ -1802,7 +2051,13 @@
   }
 
   function iniziaGiocoNuovo() {
-    stato = { deus: 0, vesper: 0, se: 0, scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0 };
+    stato = {
+      deus: 0, vesper: 0, se: 0,
+      scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0,
+      gab: { energia: 5, forzaFisica: 4, resistenza: 4, forzaMagica: 5, resMagica: 4, istinto: 5 },
+      geus: { essenza: 8, forzaMagica: 7, resMagica: 7, controllo: 9, piume: 9, fiducia: 4, fiduciaDeus: 7, fiduciaVesper: 2 },
+      vesper_imp: 9
+    };
     showScreen('gioco');
     caricaScena(0);
   }
@@ -1831,7 +2086,13 @@
     const b = document.getElementById('banner-ripristino');
     if (b) b.remove();
     cancellaSalvataggio();
-    stato = { deus: 0, vesper: 0, se: 0, scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0 };
+    stato = {
+      deus: 0, vesper: 0, se: 0,
+      scenaCorrente: 0, dadoLanciato: false, risultatoDado: 0,
+      gab: { energia: 5, forzaFisica: 4, resistenza: 4, forzaMagica: 5, resMagica: 4, istinto: 5 },
+      geus: { essenza: 8, forzaMagica: 7, resMagica: 7, controllo: 9, piume: 9, fiducia: 4, fiduciaDeus: 7, fiduciaVesper: 2 },
+      vesper_imp: 9
+    };
     caricaScena(0);
   }
 
